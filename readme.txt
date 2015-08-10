@@ -20,11 +20,11 @@ Note: requires a free account at beacon.by
 
 There are three main tasks which this plugin performs:
 
-	- Create eBook: filter, search and select existing posts which will form the core content of an eBook created over at beacon.by
+- Create eBook: filter, search and select existing posts which will form the core content of an eBook created over at beacon.by
 
-	- Promote eBook: Customize a widget for your wordpress site that promotes your eBook complete with an email capture form for prospective leads.
+- Promote eBook: Customize a widget for your wordpress site that promotes your eBook complete with an email capture form for prospective leads.
 
-	- Embed eBook: You can also embed the eBook on any post or page.
+- Embed eBook: You can also embed the eBook on any post or page.
 
 
 == Installation ==
@@ -37,7 +37,8 @@ This section describes how to install the plugin and get it working.
 
 
 == Screenshots ==
-The embed live editor in action
-Preview of embed eBook feature
+
+1. The embed live editor in action
+2. Preview of embed eBook feature
 
 == Changelog ==
