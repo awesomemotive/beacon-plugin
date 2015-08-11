@@ -16,6 +16,8 @@ Most newsletter subscription boxes are missing a valuable reason that encourages
 
 *Note:* requires a free account available from www.beacon.by
 
+[youtube https://www.youtube.com/watch?v=cBgtbi7WX8w&feature=youtu.be]
+
 = eBook Creation Features =
 
 - Include existing WordPress articles
