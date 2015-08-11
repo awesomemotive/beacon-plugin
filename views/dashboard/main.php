@@ -44,7 +44,7 @@ This plugin performs three main tasks for you:
 		<a href="/wp-admin/admin.php?page=beaconby-embed">
 			<b>Embed your eBook</b> <br />
 			<small>
-				You also have the option to embed any of your eBooks inon any post or page.
+				You also have the option to embed any of your eBooks on any post or page.
 			</small>
 		</a>
 	</li>
