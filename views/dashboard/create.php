@@ -12,8 +12,13 @@ Simply select the posts you want to feature in your eBook below, click create an
 
 
 	<div class="search">
+		<form>
 		<input type="text" class="filter" placeholder="search" />
 		<span class="clear">x</span>
+		<button type="submit">
+		<i class="fa fa-search"></i>
+		</button>
+		</form>
 	</div>
 	
 

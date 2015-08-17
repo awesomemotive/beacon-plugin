@@ -193,6 +193,21 @@ cursor: pointer;
 	left: 0;  
 }
 
+.beacon-by-admin-wrap .search button { 
+	font-size: 130%;  
+	border-radius: 10px; 
+	padding: 5px 10px; 
+	margin: 0 0 0 10px; 
+	border: none;
+}
+
+
+.beacon-by-admin-wrap .search button:hover {
+	cursor: pointer;
+	background: #2CA05A;
+	color: #fff;
+}
+
 .beacon-by-admin-wrap .select-form { }
 
 .beacon-by-admin-wrap .form-row {

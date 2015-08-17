@@ -11,6 +11,7 @@ jQuery(document).ready(function() {
       errMsg = $('.beacon-by-admin-wrap .error-no-posts'),
       showAllCat = $('.beacon-by-admin-wrap .all-cat'),
       clearSearch = $('.beacon-by-admin-wrap span.clear'),
+      runSearch = $('.beacon-by-admin-wrap .search form'),
       consent = $('input[name="beacon_consent_given"]');
 
 
@@ -117,7 +118,15 @@ jQuery(document).ready(function() {
 
 
   filter.keyup(function() {
-    searchFilter($(this).val());
+    // searchFilter($(this).val());
+  });
+  
+  
+  runSearch.submit(function(e) {
+    e.preventDefault();
+    var terms = filter.val();
+    searchFilter(terms);
+    return false;
   });
 
   toggleVisible.change(function() {
@@ -173,6 +182,7 @@ jQuery(document).ready(function() {
   clearSearch.click(function(e) {
     filter.val('');
     searchFilter('');
+    filter.focus();
   });
 
 });
