@@ -73,7 +73,7 @@ class Beacon_plugin {
 	 */
 	public function get_view($view, $title = false, $data = array()) {
 		
-		$self = SELF::get_instance();
+		$self = self::get_instance();
 		$data= array_merge($self->data, $data);
 
 
@@ -156,9 +156,9 @@ class Beacon_plugin {
 			: 'beaconby';
 
 
-		$self = SELF::get_instance();
+		$self = self::get_instance();
 		$self->data = array ( 
-			'has_authorized' => SELF::has_authorized(),
+			'has_authorized' => self::has_authorized(),
 		);
 
 		if ( $current_page !== 'beaconby' && 
@@ -205,7 +205,7 @@ class Beacon_plugin {
 	 */
 	private function page_main() {
 
-		$self = SELF::get_instance();
+		$self = self::get_instance();
 
 		$data = array();
 
@@ -235,7 +235,7 @@ class Beacon_plugin {
 	 */
 	private function page_create() {
 
-		$self = SELF::get_instance();
+		$self = self::get_instance();
 		wp_enqueue_script( 'beaconby_create', 
 				BEACONBY_PLUGIN_URL . 'js/beacon-create.js' );
 		return $self->get_view('create', 'Create an eBook');
@@ -250,7 +250,7 @@ class Beacon_plugin {
 	 */
 	private function page_embed() {
 
-		$self = SELF::get_instance();
+		$self = self::get_instance();
 		wp_enqueue_script( 'beaconby_embed', 
 			BEACONBY_PLUGIN_URL . 'js/beacon-embed.js' );
 		return $self->get_view( 'embed', 'Embed an eBook' );
@@ -265,7 +265,7 @@ class Beacon_plugin {
 	 */
 	private function page_help() {
 
-		$self = SELF::get_instance();
+		$self = self::get_instance();
 		return $self->get_view( 'help', 'Help' );
 	}
 
@@ -279,7 +279,7 @@ class Beacon_plugin {
 	 */
 	private function page_promote() {
 
-		$self = SELF::get_instance();
+		$self = self::get_instance();
 
 		wp_enqueue_script( 'beaconby_promote', 
 			BEACONBY_PLUGIN_URL .  'js/beacon-promote.js' );
