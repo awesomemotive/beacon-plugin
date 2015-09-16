@@ -18,6 +18,12 @@
 		</div>
 	</div>
 
+
+	<div class="beacon-loading">
+	<h1>Loading...</h1>
+	<p>Retrieving info from your Beacon account</p>
+	</div>
+
 	<div class="requires-login">
 	
 

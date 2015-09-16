@@ -1,20 +1,14 @@
 
-<?php if ( $data['has_authorized'] ): ?>
-<iframe 
-	src="http://<?php echo BEACONBY_CREATE_TARGET; ?>/api/user/wordpress" 
-	id="beacon" 
-	width="600"
-	height="0"
-	frameborder="0"></iframe>
+<script>
+<?php if ($data['has_connected']): ?>
+BN_target = 'http://<?php echo BEACONBY_CREATE_TARGET . '/api/beacon/' . $data['has_connected']?>';
+<?php else: ?>
+BN_target = false;
 <?php endif; ?>
+</script>
 
-
-<div class="beacon-account">
-<hr />
 
 </div>
-
-</div>
-<!-- .beacon-by-admin-wrap -->
+<!-- .requires-login -->
 </div>
 <!-- .beacon-by-admin-wrap -->

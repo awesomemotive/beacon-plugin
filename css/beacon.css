@@ -1,5 +1,31 @@
 
-.beacon-by-admin-wrap {}
+.beacon-by-admin-wrap {
+	position: relative;
+}
+
+.beacon-by-admin-wrap .beacon-loading {
+	display: none;
+	width: 300px;
+	margin: 2em auto;
+	text-align: auto;
+	background: #fff;
+	padding: 2em;
+	border-radius: 5px;
+	font-size: 200%;
+}
+
+.beacon-by-admin-wrap.loading  {
+}
+
+
+.beacon-by-admin-wrap.loading .beacon-loading {
+	display: block;
+	/* text-align: center; */
+	opacity: 1 !important;
+}
+.beacon-by-admin-wrap.loading .requires-login {
+	display: none;
+}
 
 .beacon-by-admin-wrap .prompt-login { 
 	display: none; 
@@ -7,6 +33,9 @@
 
 .beacon-by-admin-wrap .fa  { 
 	padding-right: .4em; 
+}
+.beacon-by-admin-wrap .green  { 
+	color: #2CA05A;
 }
 
 .beacon-status.success { 
@@ -28,6 +57,14 @@
 	font-size: 500%;
 	color: #eee;
 }
+.beacon-by-admin-wrap ul.issues {}
+.beacon-by-admin-wrap ul.issues li {
+	font-size: 120%;
+	border: 1px solid #efefef;
+	width: 40%;
+	border-radius: 3px;
+}
+
 .beacon-by-admin-wrap ul.options {}
 
 .beacon-by-admin-wrap ul.options li a { 

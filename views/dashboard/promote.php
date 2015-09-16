@@ -9,6 +9,13 @@
 		<a href="/wp-admin/widgets.php">Activate & Place your widget</a>
 	</p>
 
+	<p>
+	<button href="#" class="button large bn-refresh">
+		<i class="fa fa-refresh"></i>
+		Refresh list of eBooks
+	</button>
+	</p>
+
 </div>
 
 

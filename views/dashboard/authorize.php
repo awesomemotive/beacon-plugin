@@ -18,10 +18,16 @@
 	This depends on you being logged into your Beacon account 
 	</p>
 
-	<form method="post">
-		<input type="hidden" name="authorize" value="true" />
-		<button class="button large">I understand, let's get started! &raquo;</button>
+	<!-- <form method="post"> -->
+		<!-- <input type="hidden" name="authorize" value="true" /> -->
+		<!-- <button class="button large">I understand, let's get started! &raquo;</button> -->
+	<!-- </form> -->
+
+	<form action="http://<?php echo BEACONBY_CREATE_TARGET; ?>/auth/wordpress" method="post">
+		<input type="hidden" name="blog" value="<?php echo $_SERVER['HTTP_HOST']; ?>" />
+		<button class="button large">Let's Connect</button>
 	</form>
+
 	
 
 </div>

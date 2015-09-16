@@ -1,15 +1,22 @@
 <div class="info">
-<i class="fa fa-info-circle"></i>
-<p>
-You can embed any eBook on your blog.
-</p>
-<p>
-Follow the steps below to get embedding in a couple of minutes.
-</p>
+	<i class="fa fa-info-circle"></i>
+	<p>
+	You can embed any eBook on your blog.
+	</p>
+	<p>
+	Follow the steps below to get embedding in a couple of minutes.
+	</p>
+
+	<p>
+	<button href="#" class="button large bn-refresh">
+		<i class="fa fa-refresh"></i>
+		Refresh list of eBooks
+	</button>
+	</p>
 </div>
 
 <div class="beacon-embed select-issue step-1" style="width: 40%; display: inline-block; vertical-align: top;">
-	<h3>Step 1. Select Issue:</h3>
+	<h3>Step 1. Select eBook:</h3>
 
 
 	<input type="hidden" name="url" value="<?php echo $url; ?>" />

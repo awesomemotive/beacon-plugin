@@ -109,6 +109,8 @@ class Beacon_plugin {
 
 		add_submenu_page( 'beaconby', 'Embed', 'Embed', $capability, 'beaconby-embed', $action);
 
+		add_submenu_page( 'beaconby', 'Connect', 'Connect', $capability, 'beaconby-connect', $action);
+
 		add_submenu_page( 'beaconby', 'Help', 'Help', $capability, 'beaconby-help', $action);
 
 	}
@@ -142,6 +144,19 @@ class Beacon_plugin {
 	}
 
 
+
+	/**
+	 * checks whether there is positive entry in wp_options
+	 * for authorization
+	 *
+	 * @access public
+	 * @return boolean
+	 */
+	public static function has_connected() {
+		return get_option('beacon_connected');
+	}
+
+
 	/**
 	 * router for all plugin actions
 	 *
@@ -158,14 +173,13 @@ class Beacon_plugin {
 
 		$self = self::get_instance();
 		$self->data = array ( 
-			'has_authorized' => self::has_authorized(),
+			'has_connected' => self::has_connected(),
 		);
 
 		if ( $current_page !== 'beaconby' && 
-				!$self->data['has_authorized'] ) {
-				$current_page = 'beaconby';
+				$self->data['has_connected'] === false ) {
+				$current_page = 'beaconby-connect';
 		}
-
 
 		switch ( $current_page )
 		{
@@ -184,6 +198,10 @@ class Beacon_plugin {
 
 			case 'beaconby-promote':
 				$output = $self->page_promote();
+			break;
+
+			case 'beaconby-connect':
+				$output = $self->page_connect();
 			break;
 
 			case 'beaconby':
@@ -209,19 +227,19 @@ class Beacon_plugin {
 
 		$data = array();
 
-		$data['authorized'] = array_key_exists ( 'authorize', $_POST ) && $_POST['authorize'] == true
-			? true : false;
+		$data['connected'] = array_key_exists ( 'beacon', $_GET )
+			? esc_html( $_GET['beacon'] ) : false;
 
-		if ( $self->data['has_authorized']  ) {
+		if ( $self->data['has_connected']  ) {
 			return $self->get_view( 'main', 'Welcome', $data );
 		}
-		else if ( !$self->data['has_authorized'] && 
-							$data['authorized']  ) {
-			update_option( 'beacon_authorized', true);
+		else if ( !$self->data['has_connected'] && 
+							$data['connected']  ) {
+			add_option( 'beacon_connected', $data['connected'] );
 			return $self->get_view( 'main', 'Welcome', $data );
 		}
 		else {
-			return $self->get_view( 'authorize', 'Authorize', $data );
+			return $self->get_view( 'connect', 'Connect', $data );
 		}
 
 	}
@@ -267,6 +285,20 @@ class Beacon_plugin {
 
 		$self = self::get_instance();
 		return $self->get_view( 'help', 'Help' );
+	}
+
+
+
+	/**
+	 * renders connect page
+	 *
+	 * @access private
+	 * @return string
+	 */
+	private function page_connect() {
+
+		$self = self::get_instance();
+		return $self->get_view( 'connect', 'Connect' );
 	}
 
 
