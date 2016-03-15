@@ -2,7 +2,7 @@
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
 Tested up to: 4.4.2
-Stable tag: 1.3.2
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
