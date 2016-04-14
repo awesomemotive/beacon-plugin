@@ -1,8 +1,8 @@
 === Beacon Marketing eBooks ===
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
-Tested up to: 4.4.2
-Stable tag: 1.3.3
+Tested up to: 4.4.5
+Stable tag: 1.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -16,7 +16,7 @@ Most newsletter subscription boxes are missing a valuable reason that encourages
 
 *Note:* requires a free account available from www.beacon.by
 
-[youtube https://www.youtube.com/watch?v=cBgtbi7WX8w&feature=youtu.be]
+[https://www.youtube.com/watch?v=y2nqkt-fZFk]
 
 = eBook Creation Features =
 
@@ -30,13 +30,6 @@ Most newsletter subscription boxes are missing a valuable reason that encourages
 - Customize page typography
 - Free stock photography library
 - Include conversion optimized call to action pages
-
-= Lead Generation Features =
-
-- Easy integration with any WordPress theme
-- Free WordPress widget for data capture
-- Image of eBook cover page on widget
-- Cusomtizable headline and call to action text
 
 = Publishing Features =
 
@@ -68,6 +61,11 @@ Alternatively, you can install manually
 6. Upload the beacon-wordpress.zip from the download location
 7. Click 'install now'	
 8. Click 'activate plugin'
+
+
+== Need help? ==
+Checkout out our knowledge base:
+http://jkhelp.beacon.by
 
 
 == Screenshots ==
