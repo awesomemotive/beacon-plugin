@@ -16,7 +16,7 @@ Most newsletter subscription boxes are missing a valuable reason that encourages
 
 *Note:* requires a free account available from www.beacon.by
 
-[https://www.youtube.com/watch?v=y2nqkt-fZFk]
+[youtube https://www.youtube.com/watch?v=y2nqkt-fZFk]
 
 = eBook Creation Features =
 
