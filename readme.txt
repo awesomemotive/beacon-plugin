@@ -15,6 +15,7 @@ Automatically convert blog posts into a beautiful marketing eBook in less than 2
 Most newsletter subscription boxes are missing a valuable reason that encourages people to opt in to your list. Beacon gives you a quick way of offering your readers an incentive that they can’t ignore. Create the book, offer the incentive and watch your conversion rates increase.
 
 *Note:* requires a free account available from www.beacon.by
+*Note:* we do not currently support Wordpress Multisite
 
 [youtube https://www.youtube.com/watch?v=y2nqkt-fZFk]
 
@@ -30,7 +31,6 @@ Most newsletter subscription boxes are missing a valuable reason that encourages
 - Customize page typography
 - Free stock photography library
 - Include conversion optimized call to action pages
-
 
 = Publishing Features =
 
@@ -66,7 +66,7 @@ Alternatively, you can install manually
 
 == Need help? ==
 Checkout out our knowledge base:
-http://jkhelp.beacon.by
+help.beacon.by/help_center
 
 
 == Screenshots ==
@@ -79,3 +79,4 @@ http://jkhelp.beacon.by
 6. The finish product
 
 == Changelog ==
+
