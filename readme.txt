@@ -2,7 +2,7 @@
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
 Tested up to: 4.5.1
-Stable tag: 1.3.5
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -78,4 +78,32 @@ help.beacon.by/help_center
 5. Promote the eBook on your blog via a customizable widget
 6. The finish product
 
+
 == Changelog ==
+
+= 1.0 =
+* First release!
+
+= 1.1 =
+* Search function for create ebook now copes better with very large sets of posts
+* Adds icons and header images for plugin directory
+
+= 1.3.3 =
+* Embed iframe clears surrounding content to prevent possible overlaps
+* Updates embed to allow for scrolling within iframe 
+* Fixes conflict with some php installations when SELF is used rather than self
+
+= 1.3.4 =
+* Updates for compatibility with Wordpress 4.5
+* Manual connect / disconnect feature
+* Add filter by tag and export Featured Image
+
+= 1.3.5 =
+* Button links based on admin_url and typo fix
+* Includes note about not supporting multisite
+* Updates Youtube video on plugin homepage
+
+= 1.3.6 =
+* Include pages as well as posts
+* Low memory mode depending on number of posts and available RAM
+
