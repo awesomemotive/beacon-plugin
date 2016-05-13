@@ -1,8 +1,8 @@
 === Beacon Marketing eBooks ===
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
-Tested up to: 4.5.1
-Stable tag: 1.3.7
+Tested up to: 4.5.2
+Stable tag: 1.3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -52,17 +52,6 @@ This section describes how to install the plugin and get it working.
 3. Type 'Beacon eBooks' into the search field
 4. Click 'Install' in the 'Beacon Plugin' box
 
-Alternatively, you can install manually
-
-1. Download the plugin from http://beacon.by/assets/integrations/beacon-wordpress.zip
-2. Log in to your WordPress account
-3. Click the plugins button on the left hand menu
-4. Select 'add new' from the plugins menu
-5. Select 'upload plugin' from the top menu
-6. Upload the beacon-wordpress.zip from the download location
-7. Click 'install now'	
-8. Click 'activate plugin'
-
 
 == Need help? ==
 Checkout out our knowledge base:
@@ -76,7 +65,7 @@ help.beacon.by/help_center
 3. Want to add more pages? We've got you covered.
 4. High impact cover pages
 5. Promote the eBook on your blog via a customizable widget
-6. The finish product
+6. The finished product
 
 
 == Changelog ==
@@ -110,3 +99,7 @@ help.beacon.by/help_center
 
 = 1.3.7 =
 * Small bug fix that prevented a minority of users from Creating an eBook
+
+
+= 1.3.8 =
+* Adjust position of create button to prevent getting hidden in safari when there are a lot of plugin notices
