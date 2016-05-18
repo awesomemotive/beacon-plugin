@@ -2,7 +2,7 @@
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
 Tested up to: 4.5.2
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -103,3 +103,6 @@ help.beacon.by/help_center
 
 = 1.3.8 =
 * Adjust position of create button to prevent getting hidden in safari when there are a lot of plugin notices
+
+= 1.3.9 =
+* Bug fix: Filter by category not always working
