@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: Beacon Plugin
-Description: Create, Promote and Embed eBooks
+Description: Create, Promote and Embed Lead Magnets
 Version: 1.0
 Author: Beacon
 Author URI: http://beacon.by
