@@ -2,7 +2,7 @@
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
 Tested up to: 4.6
-Stable tag: 1.4
+Stable tag: 1.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -122,3 +122,6 @@ help.beacon.by/help_center
 = 1.4 =
 * Loads posts incrementally so plugin works on sites with limited memory or a large number of posts
 
+
+= 1.4.1 =
+* Retries post load on error after short delay. Displays error message after 3 failed attemtps
