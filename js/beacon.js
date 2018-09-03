@@ -67,7 +67,8 @@ BN.loadIssues = function() {
         },
         error: function(e) {
           $('.beacon-by-admin-wrap').removeClass('loading');
-          alert('Oops! Please try again. There has been an error: ' + e.message );
+          // console.log(e);
+          // alert('Oops! Please try again. There has been an error: ' + e.message );
           // console.log(e.message);
         }
     });

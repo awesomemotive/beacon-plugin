@@ -10,7 +10,7 @@ if (function_exists('plugin_dir_url'))
 	switch ($host)
 	{
 		case 'wordpress':
-			$create_target = 'beacon.dev';
+			$create_target = 'localhost';
 		break;
 
 		case 'wp.beacon.by':
@@ -22,12 +22,13 @@ if (function_exists('plugin_dir_url'))
 		break;
 	}
 
-    define('BEACONBY_VERSION',        '1.0');
-    define("BEACONBY_HOMEPAGE",       "http://beacon.by/");
-    define("BEACONBY_HELPLINK",       "http://beacon.by/wordpress");
-    define('BEACONBY_PLUGIN_URL',     plugin_dir_url(__FILE__));
-    define('BEACONBY_PLUGIN_PATH',     plugin_dir_path(__FILE__));
+    define('BEACONBY_VERSION',      '1.0');
+    define("BEACONBY_HOMEPAGE",     "http://beacon.by/");
+    define("BEACONBY_HELPLINK",     "http://beacon.by/wordpress");
+    define('BEACONBY_PLUGIN_URL',   plugin_dir_url(__FILE__));
+    define('BEACONBY_PLUGIN_PATH',  plugin_dir_path(__FILE__));
 	define('BEACONBY_SITE_URL',		get_site_url());
+	define('BEACONBY_PER_PAGE',		50);
 
 	define('BEACONBY_CREATE_TARGET',	$create_target);
 

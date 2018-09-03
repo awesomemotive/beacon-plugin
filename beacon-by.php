@@ -1,13 +1,13 @@
 <?php 
 /*
 Plugin Name: Beacon Plugin
-Description: Create, Promote and Embed Lead Magnets
-Version: 1.0
+Description: Create, Promote and Embed eBooks
+Version: 1.4.4
 Author: Beacon
 Author URI: http://beacon.by
 Plugin URI: http://beacon.by/wordpress/
 License: GPL v2 (or later)
-copyright 2015 beacon.by
+copyright 2016 beacon.by
 */
 
 
@@ -18,15 +18,9 @@ if ( !function_exists( 'add_action' ) ) {
 }
 
 require( 'config.php' );
-require( 'classes/class.beacon_widget.php' );
 require( 'classes/class.beacon_plugin.php' );
 
 
-
-function beacon_register_widget() {
-
-	register_widget( 'Beacon_widget' );
-}
 
 
 function beacon_row_meta( $links, $file ) {
@@ -47,9 +41,10 @@ function beacon_row_meta( $links, $file ) {
 }
 
 
-add_action( 'widgets_init', 'beacon_register_widget' );
+// add_action( 'widgets_init', 'beacon_register_widget' );
 add_action( 'admin_init', array( 'Beacon_plugin', 'init' ) );
 add_action( 'admin_menu', array( 'Beacon_plugin', 'menu'));
+add_action( 'wp_ajax_BN_get_posts', array('Beacon_plugin', 'get_posts'));
 
 add_filter( 'plugin_row_meta', 'beacon_row_meta', 10, 2);
 

@@ -3,13 +3,13 @@
 	<h1>Hey there!</h1>
 
 	<p>
-	Before you start creating eBooks we would like to take a quick minute to allay any security concerns you may have.
+	Before you start creating lead magnemts we would like to take a quick minute to allay any security concerns you may have.
 	</p>
 
 	<p>Firstly, this is an official plugin created by the same company that is behind <a href="http://beacon.by">Beacon</a>.</p>
 
 	<p>
-	When you create an eBook your blog title and description are shared with your Beacon account. <br />
+	When you create a lead magnet your blog title and description are shared with your Beacon account. <br />
 	<b>No private information</b> such as your email address is ever shared.
 	</p>
 
@@ -25,6 +25,7 @@
 
 	<form action="http://<?php echo BEACONBY_CREATE_TARGET; ?>/auth/wordpress" method="post">
 		<input type="hidden" name="blog" value="<?php echo $_SERVER['HTTP_HOST']; ?>" />
+		<input type="hidden" name="ref" value="<?php echo Beacon_plugin::getPageURL(); ?>" />
 		<button class="button large">Let's Connect</button>
 	</form>
 

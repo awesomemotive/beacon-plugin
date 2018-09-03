@@ -16,7 +16,7 @@ BN.showIssues = function() {
           list.append('<li class="'+state+'" data-url="'+issues[i].url+'">'+issues[i].title+'</li>');
         }
    } else {
-    $('<div class="info">You need to publish an issue before you can embed it</div>')
+    $('<div class="info">You need to create an upgrade before you can embed it</div>')
       .insertAfter(list);
    }
 

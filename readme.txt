@@ -2,7 +2,7 @@
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
 Tested up to: 4.9.8
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -17,7 +17,7 @@ Most newsletter subscription boxes are missing a valuable reason that encourages
 *Note:* requires a free account available from www.beacon.by
 *Note:* we do not currently support Wordpress Multisite or the Thrive Content Builder
 
-[youtube https://www.youtube.com/watch?v=y2nqkt-fZFk]
+[youtube https://www.youtube.com/watch?v=cBgtbi7WX8w]
 
 = eBook Creation Features =
 
@@ -131,3 +131,6 @@ help.beacon.by/help_center
 = 1.4.3 =
 * Compatibility check with WordPress version 4.7.5
 * Display error on too many posts to process
+
+= 1.4.4 =
+* Compatibility check with WordPress version 4.9.8

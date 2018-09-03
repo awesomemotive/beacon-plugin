@@ -1,4 +1,3 @@
-
 .beacon-by-admin-wrap {
 	position: relative;
 }
@@ -48,7 +47,9 @@
 
 .beacon-by-admin-wrap .info { 
 	position: relative;
+	font-size: 110%;
 }
+
 
 .beacon-by-admin-wrap .info .fa-info-circle { 
 	position: absolute;
@@ -70,7 +71,8 @@
 .beacon-by-admin-wrap ul.options li a { 
 	display: block; 
 	width: 60%; 
-	font-size: 120%; 
+	font-size: 160%; 
+	line-height: 180%;
 	background: #fc3; 
 	padding: 1em; 
 	text-decoration: none; 
@@ -100,7 +102,21 @@
 	display: none; 
 }
 
-.beacon-by-admin-wrap .toggle-cat { 
+.beacon-by-admin-wrap span.fixed  { 
+	position: fixed;
+	margin-top: 5em;
+}
+
+.beacon-by-admin-wrap span.checkbox  { 
+	margin-right: 2em;
+}
+
+.beacon-by-admin-wrap span.checkbox label { 
+	font-weight: bold; 
+}
+
+.beacon-by-admin-wrap .toggle-cat , 
+.beacon-by-admin-wrap .toggle-tag { 
 	padding: .5em; 
 	background: #dedede; 
 	display: inline-block; 
@@ -108,21 +124,25 @@
 	border-radius: 5px; 
 }
 
-.beacon-by-admin-wrap .toggle-cat:hover { 
+.beacon-by-admin-wrap .toggle-cat:hover, 
+.beacon-by-admin-wrap .toggle-tag:hover { 
 	cursor: pointer; 
 }
 
-.beacon-by-admin-wrap .toggle-cat.cancel { 
+.beacon-by-admin-wrap .toggle-cat.cancel,
+.beacon-by-admin-wrap .toggle-tag.cancel { 
 	text-decoration: line-through; 
 	opacity: 0.6; 
 }
 
-.beacon-by-admin-wrap .toggle-cat.find { 
+.beacon-by-admin-wrap .toggle-cat.find,
+.beacon-by-admin-wrap .toggle-tag.find { 
 	background: green; 
 	color: #fff; 
 }
 
-.beacon-by-admin-wrap .all-cat { 
+.beacon-by-admin-wrap .all-cat, 
+.beacon-by-admin-wrap .all-tag { 
 	padding: .5em; 
 	background: #fff; 
 	display: inline-block; 
@@ -130,12 +150,13 @@
 	border-radius: 5px; 
 }
 
-.beacon-by-admin-wrap .all-cat:hover { 
+.beacon-by-admin-wrap .all-cat:hover,
+.beacon-by-admin-wrap .all-tag:hover { 
 cursor: pointer; 
 }
 
 .beacon-by-admin-wrap div.hide { 
-	display: none; 
+	display: none !important; 
 	opacity: 0.5;
 	text-decoration: line-through; 
 }
@@ -166,7 +187,7 @@ cursor: pointer;
 }
 
 .beacon-by-admin-wrap button.large { 
-	font-size: 120%; 
+	font-size: 140%; 
 	background: #fc3; 
 	font-weight: bold;
 	box-shadow: none;
@@ -178,9 +199,33 @@ cursor: pointer;
 	border-radius: 5px;
 }
 
+
+.beacon-by-admin-wrap button.text-button { 
+	margin: 0;
+	padding: 0; 
+	font-size: 120%; 
+	background: transparent; 
+	color: #00aad4;
+	font-weight: bold;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	height: auto;
+	border: none;
+}
+
+.beacon-by-admin-wrap button.text-button:hover { 
+	text-decoration: underline;
+	cursor: pointer;
+}
+
 .beacon-by-admin-wrap button.large:hover { 
 	background: #2CA05A; 
 	color: #fff; 
+}
+
+
+.beacon-by-admin-wrap button.create { 
+  display: none;
 }
 
 .beacon-by-admin-wrap .info { 
@@ -194,6 +239,22 @@ cursor: pointer;
 .beacon-by-admin-wrap .info p { 
 	font-size: 110%; 
 }
+
+
+.beacon-by-admin-wrap p.large { 
+	font-size: 150%;
+}
+
+
+.beacon-by-admin-wrap p.flush { 
+	margin-bottom: 5px;
+}
+
+.beacon-by-admin-wrap .divider { 
+	clear: both;
+	height: 40px;
+}
+
 .beacon-by-admin-wrap .col { 
 	width: 30%; 
 	display: inline-block; 
@@ -382,4 +443,72 @@ cursor: pointer;
 
 .beacon-by-admin-wrap .collapse img { 
 	border: 10px solid #333;
+}
+
+
+.beacon-by-admin-wrap dl {
+	display: inline-block;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.beacon-by-admin-wrap dt { 
+	display: inline-block;
+	width: 40%;
+	font-weight: bold;
+	padding: .5em 0;
+	margin: 0;
+	text-align: right;
+	border-bottom: 1px solid #dedede;
+}
+
+.beacon-by-admin-wrap dd {
+	display: inline-block;
+	width: 50%;
+	padding: .5em 0;
+	margin: 0 0 0 3%;
+	border-bottom: 1px solid #dedede;
+}
+
+
+.beacon-by-admin-wrap .loading-barWrap { 
+	box-sizing: border-box;
+	display: block; 
+	width: 60%; 
+	height: 30px; 
+	border: 1px solid #ccc; 
+	padding: 4px; 
+	border-radius: 3px;
+}
+
+.beacon-by-admin-wrap .loading-bar { 
+	display: block; 
+	width: 0%; 
+	height: 20px; 
+	border-radius: 3px; 
+	transition:width 1s;
+	background: green; 
+	background: linear-gradient( 0deg, darkgreen 50%, green ); 
+}
+
+.beacon-by-admin-wrap .maxposts-warning {
+  display: none; 
+  box-sizing: border-box; 
+  position: fixed; 
+  bottom: 0; 
+  padding: 1em;
+  width: 100%; 
+  background: #c20; 
+  color: #fff; 
+  text-align: center;
+}
+
+
+.beacon-by-admin-wrap .maxposts-warning p {
+  display: block; 
+  text-align: center; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  font-size: 180%;
 }

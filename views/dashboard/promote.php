@@ -1,7 +1,7 @@
 <div class="info">
 	<i class="fa fa-info-circle"></i>
 	<p>
-		Create a data capture widget for your eBook
+		Create a data capture widget for your lead magnet
 	</p>
 
 	<p>
@@ -12,7 +12,7 @@
 	<p>
 	<button href="#" class="button large bn-refresh">
 		<i class="fa fa-refresh"></i>
-		Refresh list of eBooks
+		Refresh list of lead magnets
 	</button>
 	</p>
 
