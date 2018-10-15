@@ -2,7 +2,7 @@
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
 Tested up to: 4.9.8
-Stable tag: 1.4.4
+Stable tag: 1.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -134,3 +134,6 @@ help.beacon.by/help_center
 
 = 1.4.4 =
 * Compatibility check with WordPress version 4.9.8
+
+= 1.4.5 =
+* Includes post title with post_content by default
