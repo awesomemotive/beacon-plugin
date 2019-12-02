@@ -169,7 +169,6 @@ Please select at least one post
 		<label for="togglePage">Page</label>
 	</span>
 
-	<?php// if (!$data['low_mem_mode']): ?>
 	<h3>Filter By Category</h3>
 	<p>
 	Click category to toggle
@@ -182,10 +181,7 @@ Please select at least one post
 	foreach ( $categories as $cat ):
 	?>
 	<span class="toggle-cat"><?php echo $cat->name; ?></span>
-	<?php
-	endforeach;
-	?>
-	<?php //endif; ?>
+	<?php endforeach; ?>
 
 
 	<?php if (!$data['low_mem_mode']): ?>
