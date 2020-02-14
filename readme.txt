@@ -1,8 +1,8 @@
-=== Beacon Marketing eBooks ===
+=== Beacon Lead Magnets and Lead Capture ===
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
-Tested up to: 5.3
-Stable tag: 1.4.6
+Tested up to: 5.3.2
+Stable tag: 1.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -12,35 +12,39 @@ Automatically convert blog posts into a beautiful marketing eBook in less than 2
 
 == Description ==
 
-Most newsletter subscription boxes are missing a valuable reason that encourages people to opt in to your list. Beacon gives you a quick way of offering your readers an incentive that they can’t ignore. Create the book, offer the incentive and watch your conversion rates increase.
+Beacon helps you to create professional lead magnets, publish those lead magnets on your website and convert more traffic into leads.
+
+With the Beacon WordPress plugin you can automatically convert blog posts into your lead magnet format of choice.
+
+Lead magnets can help to:
+
+- Increase conversion rate
+- Reduce cost per lead
+- Improve lead nurturing
 
 *Note:* requires a free account available from www.beacon.by
 *Note:* we do not currently support Wordpress Multisite or the Thrive Content Builder
 
-[youtube https://www.youtube.com/watch?v=cBgtbi7WX8w]
+[youtube https://www.youtube.com/watch?v=y7jTKI0j_pM]
 
-= eBook Creation Features =
+= Plugin Features =
 
-- Include existing WordPress articles
-- Filter articles by category
+- Convert WordPress posts
+- Convert WordPress pages
 - Search for specific articles
-- Unlimited pages
-- Combine old blog posts with new articles and content
-- Customize page layout
-- Customize page color schemes
-- Customize page typography
-- Free stock photography library
-- Include conversion optimized call to action pages
+- Filter by tag
+- Filter by category
 
-= Publishing Features =
 
-- Share via social media
-- Publish in HTML5 or PDF
-- Embed directly in WordPress
-- Responsive Web Design
-- Mobile Optimization
-- Search Engine Optimization
-- In book content analytics
+= Beacon Lead Magnet Features =
+
+- Dozens of customisable lead magnet templates
+- Create your own reusable templates
+- Choose from multiple lead magnet formats (eBook, Checklist, Workbook etc)
+- Automatically generated table of contents
+- PDF Download
+- Smart PDF version
+- 3d cover image generation
 
 
 == Installation ==
@@ -55,17 +59,17 @@ This section describes how to install the plugin and get it working.
 
 == Need help? ==
 Checkout out our knowledge base:
-help.beacon.by/help_center
+https://help.beacon.by/
 
 
 == Screenshots ==
 
-1. Creating an eBook is a simple matter of selecting which posts you wish to include
-2. You can then customize the design to your liking over at beacon.by
-3. Want to add more pages? We've got you covered.
-4. High impact cover pages
-5. Promote the eBook on your blog via a customizable widget
-6. The finished product
+1. Creating an eBook is a simple matter of selecting which posts you wish to include.
+2. Choose from a variety of formats.
+3. Import additional content.
+4. Browse our impressive range of themes.
+5. Edit and customize using our intuitive drag and drop editor.
+6. Publish to the web, PDF or employ a number of lead capture variations.
 
 
 == Changelog ==
@@ -140,3 +144,6 @@ help.beacon.by/help_center
 
 = 1.4.6 =
 * Small PHP7.2 compatibility fix 
+
+= 1.4.6 =
+* Updated explanatory text
