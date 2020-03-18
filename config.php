@@ -22,7 +22,7 @@ if (function_exists('plugin_dir_url'))
 		break;
 	}
 
-    define('BEACONBY_VERSION',      '1.4.6');
+    define('BEACONBY_VERSION',      '1.4.8');
     define("BEACONBY_HOMEPAGE",     "http://beacon.by/");
     define("BEACONBY_HELPLINK",     "http://beacon.by/wordpress");
     define('BEACONBY_PLUGIN_URL',   plugin_dir_url(__FILE__));

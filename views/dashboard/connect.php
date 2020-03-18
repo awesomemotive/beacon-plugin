@@ -8,6 +8,7 @@
 
 	</p>
 
+	<span style="display: none;">
 	<p>
 	<b>Your lead magnets</b>
 	<ul class="issues bn-issues"></ul>
@@ -19,6 +20,7 @@
 		Refresh list of lead magnets
 	</button>
 	</p>
+	</span>
 
 
 	<hr />
