@@ -1,8 +1,8 @@
 === Beacon Lead Magnets and Lead Capture ===
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
-Tested up to: 5.3.2
-Stable tag: 1.4.8
+Tested up to: 5.4
+Stable tag: 1.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -153,3 +153,6 @@ https://help.beacon.by/
 
 = 1.4.8 =
 * Remove unused feature where Lead Magnets in account are listed
+
+= 1.4.9 =
+* Update icons and graphics
