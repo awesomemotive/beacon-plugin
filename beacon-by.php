@@ -2,10 +2,10 @@
 /*
 Plugin Name: Beacon Plugin
 Description: Create, Promote and Embed eBooks
-Version: 1.4.9
+Version: 1.5.0
 Author: Beacon
-Author URI: http://beacon.by
-Plugin URI: http://beacon.by/wordpress/
+Author URI: https://beacon.by
+Plugin URI: https://beacon.by/wordpress/
 License: GPL v2 (or later)
 copyright 2016 beacon.by
 */

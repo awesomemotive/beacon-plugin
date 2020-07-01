@@ -5,7 +5,7 @@
  * @package   Beacon Plugin
  * @author    Beacon
  * @license   GPL-2.0+
- * @link      http://beacon.by/wordpress
+ * @link      https://beacon.by/wordpress
  * @copyright 2015 beacon.by
  */
 
