@@ -84,7 +84,7 @@ Please select at least one post
 	BN.totalPosts = <?php echo $data['total']; ?>;
 	BN.perPage = <?php echo $data['per_page']; ?>;
 	</script>
-	<form action="http://<?php echo BEACONBY_CREATE_TARGET; ?>/api/ebook" method="post" target="_blank" class="select-posts">
+	<form action="https://<?php echo BEACONBY_CREATE_TARGET; ?>/api/ebook" method="post" target="_blank" class="select-posts">
 
 	<input type="hidden" name="url" value="<?php echo get_site_url() ?>" />
 	<input type="hidden" name="title" value="<?php echo get_bloginfo('name') ?>" />

@@ -14,7 +14,7 @@
 
 	<div class="prompt-login">
 		<div class="info">
-			<p>To use this feature you must be logged into your <a href="http://<?php echo BEACONBY_CREATE_TARGET; ?>/login" target="_blank">Beacon account</a></p>
+			<p>To use this feature you must be logged into your <a href="https://<?php echo BEACONBY_CREATE_TARGET; ?>/login" target="_blank">Beacon account</a></p>
 		</div>
 	</div>
 

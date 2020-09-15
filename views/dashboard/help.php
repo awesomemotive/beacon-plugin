@@ -4,7 +4,7 @@
 
 <p class="large">
 Please check out help center to get answers to frequently asked questions: 
-<a href="http://help.beacon.by" target="_blank">Help Center</a>
+<a href="https://help.beacon.by" target="_blank">Help Center</a>
 </p>
 
 <hr />
@@ -17,7 +17,7 @@ Please check out help center to get answers to frequently asked questions:
 
 <p class="large">
 <b>1. </b> First, we're going to need your unique Beacon name. 
-<a href="http://<?php echo BEACONBY_CREATE_TARGET; ?>/dashboard/publication-name" target="_blank">
+<a href="https://<?php echo BEACONBY_CREATE_TARGET; ?>/dashboard/publication-name" target="_blank">
 Click this link to get it
 </a>
 

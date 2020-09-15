@@ -6,7 +6,7 @@
 	Before you start creating lead magnemts we would like to take a quick minute to allay any security concerns you may have.
 	</p>
 
-	<p>Firstly, this is an official plugin created by the same company that is behind <a href="http://beacon.by">Beacon</a>.</p>
+	<p>Firstly, this is an official plugin created by the same company that is behind <a href="https://beacon.by">Beacon</a>.</p>
 
 	<p>
 	When you create a lead magnet your blog title and description are shared with your Beacon account. <br />
@@ -23,7 +23,7 @@
 		<!-- <button class="button large">I understand, let's get started! &raquo;</button> -->
 	<!-- </form> -->
 
-	<form action="http://<?php echo BEACONBY_CREATE_TARGET; ?>/auth/wordpress" method="post">
+	<form action="https://<?php echo BEACONBY_CREATE_TARGET; ?>/auth/wordpress" method="post">
 		<input type="hidden" name="blog" value="<?php echo $_SERVER['HTTP_HOST']; ?>" />
 		<input type="hidden" name="ref" value="<?php echo Beacon_plugin::getPageURL(); ?>" />
 		<button class="button large">Let's Connect</button>

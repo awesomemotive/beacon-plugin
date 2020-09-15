@@ -1,6 +1,6 @@
 <?php 
 	$parts = explode('/', $data['url']);
-	$origin = 'http://'.$parts[2];
+	$origin = 'https://'.$parts[2];
 	$issue_url = $parts[count($parts) - 1];
 	$pub_url = $parts[count($parts) - 2];
 	$thumb = ($data['url']) 

@@ -63,8 +63,9 @@ jQuery(document).ready(function() {
           $('.maxposts-warning').hide();
         }
 
-        var checked = $(this).attr('checked') === 'checked',
+        var checked = $(this).is(':checked'),
             data = $(this).parent('div').find('.post_data');
+
         if ( checked )  {
           data.removeAttr('disabled');
           errMsg.fadeOut('slow');
@@ -278,12 +279,17 @@ jQuery(document).ready(function() {
   $('.button.create').click(function(e) {
     e.preventDefault();
     var count = 0;
+    document.querySelectorAll('.post_data').forEach((el) => {
+      console.log(el.innerText);
+    });
     $('.post_data').each(function() {
+      // console.log($(this));
       if ( $(this).attr('disabled') ) {
       } else {
         count += 1;
       }
     });
+    console.log(count);
 
     if ( count ) {
       form.submit();
@@ -326,27 +332,24 @@ jQuery(document).ready(function() {
   });
 
   togglePost.click(function(e) {
-    var checked = $(this).attr('checked') === 'checked' ? true : false;
+    var checked = $(this).is(':checked') ? true : false;
 
     if (checked) {
       $('.form-row.type-post').show(); 
     } else {
       $('.form-row.type-post').hide(); 
     }
-
-console.log(checked);
   });
 
 
   togglePage.click(function(e) {
-    var checked = $(this).attr('checked') === 'checked' ? true : false;
+    var checked = $(this).is(':checked') ? true : false;
 
     if (checked) {
       $('.form-row.type-page').show(); 
     } else {
       $('.form-row.type-page').hide(); 
     }
-console.log(checked);
   });
 
 
