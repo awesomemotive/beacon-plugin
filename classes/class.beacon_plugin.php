@@ -128,7 +128,7 @@ class Beacon_plugin {
 			'posts_per_page'   => $per_page,
 			'offset'           => $from,
 			'orderby'          => 'date',
-			'order'            => 'DESC',
+			'order'            => 'ASC',
 			'post_type' => array('page', 'post')
 		);
 		$posts = get_posts( $args );

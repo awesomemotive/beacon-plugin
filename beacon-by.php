@@ -2,7 +2,7 @@
 /*
 Plugin Name: Beacon Plugin
 Description: Create, Promote and Embed eBooks
-Version: 1.5.1
+Version: 1.5.2
 Author: Beacon
 Author URI: https://beacon.by
 Plugin URI: https://beacon.by/wordpress/
