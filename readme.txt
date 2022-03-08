@@ -1,8 +1,8 @@
 === Beacon Lead Magnets and Lead Capture ===
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
-Tested up to: 5.7.2
-Stable tag: 1.5.2
+Tested up to: 5.7.9
+Stable tag: 1.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -166,4 +166,8 @@ https://help.beacon.by/
 = 1.5.2 =
 * Compatibility update for Wordpress version 5.7
 * Orders posts most recent first
+
+= 1.5.3 =
+* Compatibility update for Wordpress version 5.9
+
 
