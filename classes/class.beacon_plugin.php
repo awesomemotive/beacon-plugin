@@ -47,18 +47,23 @@ class Beacon_plugin {
 	 * @return void
 	 */
 	public static function init() {
+		if (isset($_REQUEST['page']) 
+			&& strstr(esc_html($_REQUEST['page']), 'beaconby') !== -1 )
+		{
 
-		wp_enqueue_style( 'beaconby_admin', 
-						BEACONBY_PLUGIN_URL . 'css/beacon.css' );
+			wp_enqueue_style( 'beaconby_admin', 
+							BEACONBY_PLUGIN_URL . 'css/beacon.css' );
 
-		wp_enqueue_style( 'beaconby_widget', 
-					 BEACONBY_PLUGIN_URL . 'css/beacon-widget.css' );
+			wp_enqueue_style( 'beaconby_widget', 
+						 BEACONBY_PLUGIN_URL . 'css/beacon-widget.css' );
 
-		wp_enqueue_style( 'beaconby_fontawesome',
-					BEACONBY_PLUGIN_URL .  'css/font-awesome.min.css');
+			wp_enqueue_style( 'beaconby_fontawesome',
+						BEACONBY_PLUGIN_URL .  'css/font-awesome.min.css');
 
-		wp_enqueue_script( 'beaconby_admin', 
-					BEACONBY_PLUGIN_URL .  'js/beacon.js' );
+			wp_enqueue_script( 'beaconby_admin', 
+						BEACONBY_PLUGIN_URL .  'js/beacon.js' );
+
+		}
 	}
 
 
@@ -223,6 +228,17 @@ class Beacon_plugin {
 			? esc_html($_REQUEST['page']) 
 			: 'beaconby';
 
+		wp_enqueue_style( 'beaconby_admin', 
+						BEACONBY_PLUGIN_URL . 'css/beacon.css' );
+
+		wp_enqueue_style( 'beaconby_widget', 
+					 BEACONBY_PLUGIN_URL . 'css/beacon-widget.css' );
+
+		wp_enqueue_style( 'beaconby_fontawesome',
+					BEACONBY_PLUGIN_URL .  'css/font-awesome.min.css');
+
+		wp_enqueue_script( 'beaconby_admin', 
+					BEACONBY_PLUGIN_URL .  'js/beacon.js' );
 
 		$self = self::get_instance();
 		$self->data = array ( 
@@ -594,6 +610,4 @@ class Beacon_plugin {
 
 	}
 
-
 }
-
