@@ -140,7 +140,7 @@ class Beacon_plugin {
 		$data['posts'] = array();
 		foreach ($posts as $post)
 		{
-			if (BEACON_INCLUDE_TITLES)
+			if (BEACONBY_INCLUDE_TITLES)
 			{
 				$post->post_content = '<h1>'.$post->post_title.'</h1>' 
 					. $post->post_content;
