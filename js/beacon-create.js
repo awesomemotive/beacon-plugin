@@ -439,7 +439,7 @@ jQuery(document).ready(function() {
     var i, re;
     template = $(template).html();
     for (i = 0; i < tags.length; i += 1) {
-      re = new RegExp('{'+tags[i]+'}', 'g'); 
+      re = new RegExp('{'+tags[i]+'}', 'g');
       template = template.replace(re, data[tags[i]]);
     }
     return template;
@@ -453,4 +453,4 @@ jQuery(document).ready(function() {
 
 window.setTimeout(function() {
   BN.initGetPosts();
-}, 10);
+}, 1000);
