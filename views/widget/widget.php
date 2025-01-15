@@ -18,7 +18,7 @@
 		</div>
 		<h3 class="beacon-headline"=><?php echo $data['title']; ?></h3>
 		<form action="<?php echo $target; ?>" method="post">
-			<input type="hidden" name="beaconby-url" value="<?php echo $data['url']; ?>" />
+			<input type="hidden" name="beaconby-url" value="<?php echo esc_attr( esc_url( $data['url'] ) ); ?>" />
 			<input type="email" name="beaconby-email" placeholder="Your Email" />
 		<button class="beacon-title" type="submit"><?php echo $data['button']; ?></button>
 		</form>

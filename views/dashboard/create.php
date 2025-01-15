@@ -86,7 +86,7 @@ Please select at least one post
 	</script>
 	<form action="<?php echo BEACONBY_CREATE_TARGET; ?>/api/ebook" method="post" target="_blank" class="select-posts">
 
-	<input type="hidden" name="url" value="<?php echo esc_attr( get_site_url() ); ?>" />
+	<input type="hidden" name="url" value="<?php echo esc_attr( esc_url( get_site_url() ) ); ?>" />
 	<input type="hidden" name="title" value="<?php echo esc_attr( get_bloginfo('name') ); ?>" />
 	<input type="hidden" name="decription" value="<?php echo esc_attr( get_bloginfo('description') ); ?>" />
 
@@ -130,22 +130,22 @@ Please select at least one post
 			$encoded = base64_encode ( serialize( $post ) );
 	?>
 
-	<div class="form-row type-<?php echo $post->post_type; ?>">
+	<div class="form-row type-<?php echo esc_attr( $post->post_type ); ?>">
 		<input type="checkbox" 
 				class="post_toggle" 
-				id="beacon_export_<?php echo $post->ID?>" />
+				id="beacon_export_<?php echo esc_attr( $post->ID ); ?>" />
 		<input type="hidden" 
 				class="post_data" 
-				data-cats="<?php echo $post->cats; ?>" 
-				data-tags="<?php echo $post->tags; ?>" 
-				data-title="<?php echo $post->post_title; ?>"
-				name="posts[<?php echo $post->id; ?>]" 
-				value="<?php echo $encoded; ?>" />
+				data-cats="<?php echo esc_attr( $post->cats ); ?>" 
+				data-tags="<?php echo esc_attr( $post->tags ); ?>" 
+				data-title="<?php echo esc_attr( $post->post_title ); ?>"
+				name="posts[<?php echo esc_attr( $post->id ); ?>]" 
+				value="<?php echo esc_attr( $encoded ); ?>" />
 
-		<label for="beacon_export_<?php echo $post->ID ?>">
-		<b><?php echo $post->post_title; ?></b>
-		<small><?php echo $post->cats; ?></small>
-		<small><?php echo $post->tags; ?></small>
+		<label for="beacon_export_<?php echo esc_attr( $post->ID ); ?>">
+		<b><?php echo esc_attr( $post->post_title ); ?></b>
+		<small><?php echo esc_attr( $post->cats ); ?></small>
+		<small><?php echo esc_attr( $post->tags ); ?></small>
 		</label>
 	</div>
 

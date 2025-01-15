@@ -42,7 +42,7 @@
 	<h1>2. Customize</h1>
 	<form method="post" id="beacon-promote">
 
-	<input type="hidden" name="url" value="<?php echo esc_attr( $data['url'] ); ?>" />
+	<input type="hidden" name="url" value="<?php echo esc_attr( esc_url( $data['url'] ) ); ?>" />
 
 	<div class="form-row">
 		<label for="headline">Headline</label>
