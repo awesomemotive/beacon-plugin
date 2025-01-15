@@ -42,21 +42,21 @@
 	<h1>2. Customize</h1>
 	<form method="post" id="beacon-promote">
 
-	<input type="hidden" name="url" value="<?php echo $data['url']; ?>" />
+	<input type="hidden" name="url" value="<?php echo esc_attr( $data['url'] ); ?>" />
 
 	<div class="form-row">
 		<label for="headline">Headline</label>
-		<input type="text" name="headline" value="<?php echo $data['headline']; ?>" />
+		<input type="text" name="headline" value="<?php echo esc_attr( $data['headline'] ); ?>" />
 	</div>
 
 	<div class="form-row">
 		<label for="title">Blurb</label>
-		<input type="text" name="title" value="<?php echo $data['title']; ?>" />
+		<input type="text" name="title" value="<?php echo esc_attr( $data['title'] ); ?>" />
 	</div>
 
 	<div class="form-row">
 		<label for="title">Button text</label>
-		<input type="text" name="button" value="<?php echo $data['button']; ?>" />
+		<input type="text" name="button" value="<?php echo esc_attr( $data['button'] ); ?>" />
 	</div>
 
 	</form>

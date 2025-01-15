@@ -24,8 +24,8 @@
 	<!-- </form> -->
 
 	<form action="<?php echo BEACONBY_CREATE_TARGET; ?>/auth/wordpress" method="post">
-		<input type="hidden" name="blog" value="<?php echo $_SERVER['HTTP_HOST']; ?>" />
-		<input type="hidden" name="ref" value="<?php echo Beacon_plugin::getPageURL(); ?>" />
+		<input type="hidden" name="blog" value="<?php echo esc_attr( $_SERVER['HTTP_HOST'] ); ?>" />
+		<input type="hidden" name="ref" value="<?php echo esc_attr( Beacon_plugin::getPageURL() ); ?>" />
 		<button class="button large">Let's Connect</button>
 	</form>
 
