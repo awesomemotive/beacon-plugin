@@ -3,7 +3,7 @@ Tags: ebook, lead capture, lead capture form, lead capture plugin, protected con
 Requires at least: 3.0.1
 Tested up to: 6.7
 Requires PHP: 5.3
-Stable tag: 1.5.7
+Stable tag: 1.5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 Contributors: beacon.by
@@ -74,6 +74,10 @@ https://help.beacon.by/
 
 
 == Changelog ==
+
+= 1.5.8 =
+* Improved output escaping throughout the plugin
+* Bumped "Tested up to" version to 6.7
 
 = 1.5.7 =
 * Compatibility update for Wordpress version 6.3
