@@ -9,7 +9,7 @@
 
 <ul class="options">
 	<li>
-		<a href="<?php echo admin_url( 'admin.php?page=beaconby-create' ); ?>">
+		<a href="<?php echo esc_url( admin_url( 'admin.php?page=beaconby-create' ) ); ?>">
 			<b>Create a new lead magnet</b><br />
 		<small>
 			Convert existing blog posts into a eBooks, Checklists and Resource Guides.

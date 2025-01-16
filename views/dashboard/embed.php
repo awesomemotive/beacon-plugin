@@ -26,7 +26,7 @@
 
 	<div class="collapse help-image">
 		<a href="#" class="close"><i class="fa fa-times"></i> close</a>
-		<img src="<?php echo BEACONBY_PLUGIN_URL . 'i/embed-help.gif'; ?>" />
+		<img src="<?php echo esc_url( BEACONBY_PLUGIN_URL . 'i/embed-help.gif' ); ?>" />
 	</div>
 </div>
 
