@@ -86,7 +86,7 @@ Please select at least one post
 	</script>
 	<form action="<?php echo BEACONBY_CREATE_TARGET; ?>/api/ebook" method="post" target="_blank" class="select-posts">
 
-	<input type="hidden" name="url" value="<?php echo esc_attr( esc_url( get_site_url() ) ); ?>" />
+	<input type="hidden" name="url" value="<?php echo esc_url( get_site_url() ); ?>" />
 	<input type="hidden" name="title" value="<?php echo esc_attr( get_bloginfo('name') ); ?>" />
 	<input type="hidden" name="decription" value="<?php echo esc_attr( get_bloginfo('description') ); ?>" />
 

@@ -19,7 +19,7 @@
 	<h3>Step 1. Select Content Upgrade:</h3>
 
 
-	<input type="hidden" name="url" value="<?php echo isset( $url ) ? esc_attr( esc_url( $url ) ) : ''; ?>" />
+	<input type="hidden" name="url" value="<?php echo isset( $url ) ? esc_url( $url ) : ''; ?>" />
 
 	<ul class="issues">
 	</ul>
