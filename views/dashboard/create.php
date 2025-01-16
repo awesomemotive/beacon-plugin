@@ -81,8 +81,8 @@ Please select at least one post
 
 	<script>
 	var BeaconByPosts = <?php echo json_encode( $posts ); ?>;
-	BN.totalPosts = <?php echo esc_html( $data['total'] ); ?>;
-	BN.perPage = <?php echo esc_html( $data['per_page'] ); ?>;
+	BN.totalPosts = <?php echo esc_attr( (int) $data['total'] ); ?>;
+	BN.perPage = <?php echo esc_attr( (int) $data['per_page'] ); ?>;
 	</script>
 	<form action="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/api/ebook' ); ?>" method="post" target="_blank" class="select-posts">
 
@@ -107,7 +107,7 @@ Please select at least one post
 			// }
 			// else
 			// {
-			// 	$post->cats = '';
+			//  $post->cats = '';
 			// }
 
 
@@ -143,9 +143,9 @@ Please select at least one post
 				value="<?php echo esc_attr( $encoded ); ?>" />
 
 		<label for="beacon_export_<?php echo esc_attr( $post->ID ); ?>">
-		<b><?php echo esc_attr( $post->post_title ); ?></b>
-		<small><?php echo esc_attr( $post->cats ); ?></small>
-		<small><?php echo esc_attr( $post->tags ); ?></small>
+		<b><?php echo esc_html( $post->post_title ); ?></b>
+		<small><?php echo esc_html( $post->cats ); ?></small>
+		<small><?php echo esc_html( $post->tags ); ?></small>
 		</label>
 	</div>
 

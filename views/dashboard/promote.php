@@ -63,7 +63,7 @@
 </div>
 
 
-<div class="step step3">	
+<div class="step step3">    
 	<h1>3. Preview</h1>
 
 	<?php
