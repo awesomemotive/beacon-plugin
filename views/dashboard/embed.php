@@ -19,14 +19,14 @@
 	<h3>Step 1. Select Content Upgrade:</h3>
 
 
-	<input type="hidden" name="url" value="<?php echo isset( $url ) ? $url : ''; ?>" />
+	<input type="hidden" name="url" value="<?php echo isset( $url ) ? esc_url( $url ) : ''; ?>" />
 
 	<ul class="issues">
 	</ul>
 
 	<div class="collapse help-image">
 		<a href="#" class="close"><i class="fa fa-times"></i> close</a>
-		<img src="<?php echo BEACONBY_PLUGIN_URL . 'i/embed-help.gif'; ?>" />
+		<img src="<?php echo esc_url( BEACONBY_PLUGIN_URL . 'i/embed-help.gif' ); ?>" />
 	</div>
 </div>
 

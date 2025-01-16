@@ -1,4 +1,8 @@
-<?php defined( 'ABSPATH' ) or die( '' );
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Beacon plugin class
@@ -359,11 +363,11 @@ class Beacon_plugin {
 
 
 		// $posts = get_posts( array(
-		// 	'numberposts' => $num_posts, 
-		// 	'order_by' => 'date',
-		// 	'order' => $order,
-		// 	'fields' => array('post_title', 'comment_status'),
-		// 	'post_type' => array('page', 'post')) );
+		//  'numberposts' => $num_posts, 
+		//  'order_by' => 'date',
+		//  'order' => $order,
+		//  'fields' => array('post_title', 'comment_status'),
+		//  'post_type' => array('page', 'post')) );
 		$posts = array();
 		
 
@@ -478,7 +482,7 @@ class Beacon_plugin {
 			foreach ( $_POST as $k => $v ) {
 				$k = esc_html( $k );
 				$v = esc_html( $v );
-				$post[$k] = $v;	
+				$post[$k] = $v; 
 			}
 
 			$serialized = serialize( $post) ;

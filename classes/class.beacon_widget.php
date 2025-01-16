@@ -1,5 +1,8 @@
-<?php defined( 'ABSPATH' ) or die( '' );
-
+<?php
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Beacon widget class
@@ -83,7 +86,7 @@ class Beacon_widget extends WP_Widget {
 		$data = ($data) ? $data : array();
 		// extract($data);
 		ob_start();
-		require($view);			
+		require($view);         
 		$view = ob_get_contents();
 		ob_end_clean();
 

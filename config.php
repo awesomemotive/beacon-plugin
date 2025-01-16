@@ -1,5 +1,9 @@
 <?php 
 
+// Exit if accessed directly.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 //Prevent directly browsing to the file
 if (function_exists('plugin_dir_url')) 
@@ -23,11 +27,11 @@ if (function_exists('plugin_dir_url'))
 	define("BEACONBY_HELPLINK",     "https://beacon.by/wordpress");
 	define('BEACONBY_PLUGIN_URL',   plugin_dir_url(__FILE__));
 	define('BEACONBY_PLUGIN_PATH',  plugin_dir_path(__FILE__));
-	define('BEACONBY_SITE_URL',	get_site_url());
+	define('BEACONBY_SITE_URL', get_site_url());
 	define('BEACONBY_INCLUDE_TITLES', true);
-	define('BEACONBY_PER_PAGE',	50);
+	define('BEACONBY_PER_PAGE', 50);
 
-	define('BEACONBY_CREATE_TARGET',	$create_target);
+	define('BEACONBY_CREATE_TARGET',    $create_target);
 
 }
 

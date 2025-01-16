@@ -44,9 +44,9 @@
 
 	<p> Connect WordPress to your Beacon account so you can convert blog posts into lead magnets.  </p>
 
-	<form action="<?php echo BEACONBY_CREATE_TARGET; ?>/auth/wordpress" method="post">
-		<input type="hidden" name="blog" value="<?php echo $_SERVER['HTTP_HOST']; ?>" />
-		<input type="hidden" name="ref" value="<?php echo Beacon_plugin::getPageURL(); ?>" />
+	<form action="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/auth/wordpress' ); ?>" method="post">
+		<input type="hidden" name="blog" value="<?php echo esc_attr( $_SERVER['HTTP_HOST'] ); ?>" />
+		<input type="hidden" name="ref" value="<?php echo esc_url( Beacon_plugin::getPageURL() ); ?>" />
 		<button class="button large">Connect</button>
 	</form>
 
@@ -54,9 +54,9 @@
 
 	<p class="large flush">I don't have a Beacon account </p>
 
-	<form action="<?php echo BEACONBY_CREATE_TARGET; ?>/auth/register-wordpress" method="post">
-		<input type="hidden" name="page" value="<?php echo $_SERVER['HTTP_HOST']; ?>"/>
-		<input type="hidden" name="domain" value="<?php echo $_SERVER['PHP_SELF']; ?>"/>
+	<form action="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/auth/register-wordpress' ); ?>" method="post">
+		<input type="hidden" name="page" value="<?php echo esc_attr( $_SERVER['HTTP_HOST'] ); ?>"/>
+		<input type="hidden" name="domain" value="<?php echo esc_url( $_SERVER['PHP_SELF'] ); ?>"/>
 		<button type="submit" class="text-button">Create a free account &gt;</button>
 	</form>
 	<br />

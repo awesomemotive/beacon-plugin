@@ -39,19 +39,19 @@ Please select at least one post
 
 		<dl>          
 			<dt>Available RAM </dt>
-			<dd><?php echo $data['mem']; ?>mb</dd>
+			<dd><?php echo esc_html( $data['mem'] ); ?>mb</dd>
 					
 			<dt>Low memory mode</dt>
-			<dd><?php echo $data['low_mem_mode_display']; ?></dd>
+			<dd><?php echo esc_html( $data['low_mem_mode_display'] ); ?></dd>
 
 			<dt>Posts shown</dt>
-			<dd><?php echo count($posts); ?></dd>
+			<dd><?php echo esc_html( count($posts) ); ?></dd>
 						
 			<dt>Total posts</dt>
-			<dd><?php echo $data['total']; ?></dd>
+			<dd><?php echo esc_html( $data['total'] ); ?></dd>
 						
 			<dt>Max posts</dt>
-			<dd><?php echo $data['post_limit']; ?></dd>
+			<dd><?php echo esc_html( $data['post_limit'] ); ?></dd>
 		</dl>
 	</div>
 <?php endif; ?>
@@ -69,8 +69,8 @@ Please select at least one post
 	<!--div class="error">
 		<h2>Oh dear! That is a lot of posts - Wordpress ran out of memory :(</h2>
 		<p>
-			Showing the most recent <?php echo count($posts); ?>
-			of all <?php echo $data['total']; ?> posts and pages
+			Showing the most recent <?php echo esc_html( count($posts) ); ?>
+			of all <?php echo esc_html( $data['total'] ); ?> posts and pages
 		</p>
 	</div-->
 <?php endif; ?>
@@ -81,14 +81,14 @@ Please select at least one post
 
 	<script>
 	var BeaconByPosts = <?php echo json_encode( $posts ); ?>;
-	BN.totalPosts = <?php echo $data['total']; ?>;
-	BN.perPage = <?php echo $data['per_page']; ?>;
+	BN.totalPosts = <?php echo esc_attr( (int) $data['total'] ); ?>;
+	BN.perPage = <?php echo esc_attr( (int) $data['per_page'] ); ?>;
 	</script>
-	<form action="<?php echo BEACONBY_CREATE_TARGET; ?>/api/ebook" method="post" target="_blank" class="select-posts">
+	<form action="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/api/ebook' ); ?>" method="post" target="_blank" class="select-posts">
 
-	<input type="hidden" name="url" value="<?php echo get_site_url() ?>" />
-	<input type="hidden" name="title" value="<?php echo get_bloginfo('name') ?>" />
-	<input type="hidden" name="decription" value="<?php echo get_bloginfo('description') ?>" />
+	<input type="hidden" name="url" value="<?php echo esc_url( get_site_url() ); ?>" />
+	<input type="hidden" name="title" value="<?php echo esc_attr( get_bloginfo('name') ); ?>" />
+	<input type="hidden" name="decription" value="<?php echo esc_attr( get_bloginfo('description') ); ?>" />
 
 
 
@@ -107,7 +107,7 @@ Please select at least one post
 			// }
 			// else
 			// {
-			// 	$post->cats = '';
+			//  $post->cats = '';
 			// }
 
 
@@ -130,22 +130,22 @@ Please select at least one post
 			$encoded = base64_encode ( serialize( $post ) );
 	?>
 
-	<div class="form-row type-<?php echo $post->post_type; ?>">
+	<div class="form-row type-<?php echo esc_attr( $post->post_type ); ?>">
 		<input type="checkbox" 
 				class="post_toggle" 
-				id="beacon_export_<?php echo $post->ID?>" />
+				id="beacon_export_<?php echo esc_attr( $post->ID ); ?>" />
 		<input type="hidden" 
 				class="post_data" 
-				data-cats="<?php echo $post->cats; ?>" 
-				data-tags="<?php echo $post->tags; ?>" 
-				data-title="<?php echo $post->post_title; ?>"
-				name="posts[<?php echo $post->id; ?>]" 
-				value="<?php echo $encoded; ?>" />
+				data-cats="<?php echo esc_attr( $post->cats ); ?>" 
+				data-tags="<?php echo esc_attr( $post->tags ); ?>" 
+				data-title="<?php echo esc_attr( $post->post_title ); ?>"
+				name="posts[<?php echo esc_attr( $post->id ); ?>]" 
+				value="<?php echo esc_attr( $encoded ); ?>" />
 
-		<label for="beacon_export_<?php echo $post->ID ?>">
-		<b><?php echo $post->post_title; ?></b>
-		<small><?php echo $post->cats; ?></small>
-		<small><?php echo $post->tags; ?></small>
+		<label for="beacon_export_<?php echo esc_attr( $post->ID ); ?>">
+		<b><?php echo esc_html( $post->post_title ); ?></b>
+		<small><?php echo esc_html( $post->cats ); ?></small>
+		<small><?php echo esc_html( $post->tags ); ?></small>
 		</label>
 	</div>
 
@@ -180,7 +180,7 @@ Please select at least one post
 	$categories = get_categories(); 
 	foreach ( $categories as $cat ):
 	?>
-	<span class="toggle-cat"><?php echo $cat->name; ?></span>
+	<span class="toggle-cat"><?php echo esc_html( $cat->name ); ?></span>
 	<?php endforeach; ?>
 
 
@@ -195,7 +195,7 @@ Please select at least one post
 	$tags = get_tags(); 
 	foreach ( $tags as $tag ):
 	?>
-	<span class="toggle-tag"><?php echo $tag->name; ?></span>
+	<span class="toggle-tag"><?php echo esc_html( $tag->name ); ?></span>
 	<?php
 	endforeach;
 	?>

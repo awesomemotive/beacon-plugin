@@ -5,7 +5,7 @@
 		<?php 
 			if (isset($title)) 
 			{
-				echo '&raquo; '. $title;
+				echo esc_html( '&raquo; ' . $title );
 			}
 		?>
 	</h1>
@@ -14,7 +14,7 @@
 
 	<div class="prompt-login">
 		<div class="info">
-			<p>To use this feature you must be logged into your <a href="<?php echo BEACONBY_CREATE_TARGET; ?>/login" target="_blank">Beacon account</a></p>
+			<p>To use this feature you must be logged into your <a href="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/login' ); ?>" target="_blank">Beacon account</a></p>
 		</div>
 	</div>
 

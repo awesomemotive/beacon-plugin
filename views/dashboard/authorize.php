@@ -23,9 +23,9 @@
 		<!-- <button class="button large">I understand, let's get started! &raquo;</button> -->
 	<!-- </form> -->
 
-	<form action="<?php echo BEACONBY_CREATE_TARGET; ?>/auth/wordpress" method="post">
-		<input type="hidden" name="blog" value="<?php echo $_SERVER['HTTP_HOST']; ?>" />
-		<input type="hidden" name="ref" value="<?php echo Beacon_plugin::getPageURL(); ?>" />
+	<form action="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/auth/wordpress' ); ?>" method="post">
+		<input type="hidden" name="blog" value="<?php echo esc_attr( $_SERVER['HTTP_HOST'] ); ?>" />
+		<input type="hidden" name="ref" value="<?php echo esc_url( Beacon_plugin::getPageURL() ); ?>" />
 		<button class="button large">Let's Connect</button>
 	</form>
 
