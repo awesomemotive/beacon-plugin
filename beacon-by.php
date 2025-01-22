@@ -7,6 +7,8 @@ Author: Beacon
 Author URI: https://beacon.by
 Plugin URI: https://beacon.by/wordpress/
 License: GPL v2 (or later)
+Requires PHP: 5.3
+
 copyright 2016 beacon.by
 */
 
