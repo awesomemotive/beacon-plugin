@@ -1,7 +1,7 @@
 === Beacon Lead Magnets and Lead Capture ===
 Tags: ebook, lead capture, lead capture form, lead capture plugin, protected content
 Requires at least: 3.0.1
-Tested up to: 6.7
+Tested up to: 6.8
 Requires PHP: 5.3
 Stable tag: 1.5.8
 License: GPLv2 or later
