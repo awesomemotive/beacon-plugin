@@ -34,7 +34,7 @@ class Beacon_plugin {
 	 * @return Object
 	 */
 	public static function get_instance() {
-		
+
 		if ( null == self::$instance ) {
 			self::$instance = new self;
 		}
@@ -51,20 +51,20 @@ class Beacon_plugin {
 	 * @return void
 	 */
 	public static function init() {
-		if (isset($_REQUEST['page']) 
+		if (isset($_REQUEST['page'])
 			&& strstr(esc_html($_REQUEST['page']), 'beaconby') !== -1 )
 		{
 
-			wp_enqueue_style( 'beaconby_admin', 
+			wp_enqueue_style( 'beaconby_admin',
 							BEACONBY_PLUGIN_URL . 'css/beacon.css' );
 
-			wp_enqueue_style( 'beaconby_widget', 
+			wp_enqueue_style( 'beaconby_widget',
 						 BEACONBY_PLUGIN_URL . 'css/beacon-widget.css' );
 
 			wp_enqueue_style( 'beaconby_fontawesome',
 						BEACONBY_PLUGIN_URL .  'css/font-awesome.min.css');
 
-			wp_enqueue_script( 'beaconby_admin', 
+			wp_enqueue_script( 'beaconby_admin',
 						BEACONBY_PLUGIN_URL .  'js/beacon.js' );
 
 		}
@@ -81,7 +81,7 @@ class Beacon_plugin {
 	 * @return string
 	 */
 	public function get_view($view, $title = false, $data = array()) {
-		
+
 		$self = self::get_instance();
 		$data= array_merge($self->data, $data);
 
@@ -146,7 +146,7 @@ class Beacon_plugin {
 		{
 			if (BEACONBY_INCLUDE_TITLES)
 			{
-				$post->post_content = '<h1>'.$post->post_title.'</h1>' 
+				$post->post_content = '<h1>'.$post->post_title.'</h1>'
 					. $post->post_content;
 			}
 
@@ -167,14 +167,14 @@ class Beacon_plugin {
 			$data['posts'][] = $post;
 		}
 
-			
+
 
 		$data['from'] = $from;
 		$data['next'] = $next;
 
 		echo json_encode($data);
 
-		wp_die(); 
+		wp_die();
 	}
 
 
@@ -228,24 +228,24 @@ class Beacon_plugin {
 	 */
 	public static function router() {
 
-		$current_page = isset($_REQUEST['page']) 
-			? esc_html($_REQUEST['page']) 
+		$current_page = isset($_REQUEST['page'])
+			? esc_html($_REQUEST['page'])
 			: 'beaconby';
 
-		wp_enqueue_style( 'beaconby_admin', 
+		wp_enqueue_style( 'beaconby_admin',
 						BEACONBY_PLUGIN_URL . 'css/beacon.css' );
 
-		wp_enqueue_style( 'beaconby_widget', 
+		wp_enqueue_style( 'beaconby_widget',
 					 BEACONBY_PLUGIN_URL . 'css/beacon-widget.css' );
 
 		wp_enqueue_style( 'beaconby_fontawesome',
 					BEACONBY_PLUGIN_URL .  'css/font-awesome.min.css');
 
-		wp_enqueue_script( 'beaconby_admin', 
+		wp_enqueue_script( 'beaconby_admin',
 					BEACONBY_PLUGIN_URL .  'js/beacon.js' );
 
 		$self = self::get_instance();
-		$self->data = array ( 
+		$self->data = array (
 			'has_connected' => self::has_connected(),
 		);
 
@@ -255,7 +255,7 @@ class Beacon_plugin {
 
 		if (!$self->data['has_connected'] && $beacon)
 		{
-			
+
 			add_option( 'beacon_connected', $beacon );
 			update_option( 'beacon_connected', $beacon );
 			$self->data['has_connected'] = self::has_connected();
@@ -266,7 +266,7 @@ class Beacon_plugin {
 				$current_page = 'beaconby-help';
 		}
 		else if ( ( $current_page !== 'beaconby' OR $current_page !=='beaconby-help' )
-				&& 
+				&&
 				$self->data['has_connected'] === false ) {
 				$current_page = 'beaconby-connect';
 		}
@@ -362,14 +362,8 @@ class Beacon_plugin {
 		}
 
 
-		// $posts = get_posts( array(
-		//  'numberposts' => $num_posts, 
-		//  'order_by' => 'date',
-		//  'order' => $order,
-		//  'fields' => array('post_title', 'comment_status'),
-		//  'post_type' => array('page', 'post')) );
 		$posts = array();
-		
+
 
 		$data = array(
 			'debug' => $debug,
@@ -383,7 +377,7 @@ class Beacon_plugin {
 			'posts' => $posts,
 			'set_limit' => (boolean) $show
 		);
-		wp_enqueue_script( 'beaconby_create', 
+		wp_enqueue_script( 'beaconby_create',
 				BEACONBY_PLUGIN_URL . 'js/beacon-create.js' );
 		return $self->get_view('create', 'Create an eBook', $data);
 	}
@@ -398,7 +392,7 @@ class Beacon_plugin {
 	private function page_embed() {
 
 		$self = self::get_instance();
-		wp_enqueue_script( 'beaconby_embed', 
+		wp_enqueue_script( 'beaconby_embed',
 			BEACONBY_PLUGIN_URL . 'js/beacon-embed.js' );
 		return $self->get_view( 'embed', 'Embed an eBook' );
 	}
@@ -416,6 +410,12 @@ class Beacon_plugin {
 
 		if (array_key_exists('beacon', $_POST))
 		{
+			// Verify nonce for CSRF protection
+			if ( ! isset( $_POST['beaconby_manual_connect_nonce'] ) ||
+				 ! wp_verify_nonce( $_POST['beaconby_manual_connect_nonce'], 'beaconby_manual_connect_action' ) ) {
+				wp_die( 'Security check failed. Please try again.' );
+			}
+
 			$beacon = trim($_POST['beacon']);
 			add_option( 'beacon_connected', $beacon );
 			update_option( 'beacon_connected', $beacon );
@@ -443,6 +443,12 @@ class Beacon_plugin {
 
 		if (array_key_exists('disconnect', $_POST))
 		{
+			// Verify nonce for CSRF protection
+			if ( ! isset( $_POST['beaconby_disconnect_nonce'] ) ||
+				 ! wp_verify_nonce( $_POST['beaconby_disconnect_nonce'], 'beaconby_disconnect_action' ) ) {
+				wp_die( 'Security check failed. Please try again.' );
+			}
+
 			delete_option('beacon_authorized');
 			delete_option('widget_beacon_widget');
 			delete_option('beacon_promote_options');
@@ -462,7 +468,7 @@ class Beacon_plugin {
 
 
 	/**
-	 * renders promote ebook page and saves 
+	 * renders promote ebook page and saves
 	 * text fields for widget
 	 *
 	 * @access private
@@ -472,17 +478,23 @@ class Beacon_plugin {
 
 		$self = self::get_instance();
 
-		wp_enqueue_script( 'beaconby_promote', 
+		wp_enqueue_script( 'beaconby_promote',
 			BEACONBY_PLUGIN_URL .  'js/beacon-promote.js' );
 
 		$data = array();
 		if ( !empty($_POST) ) {
 
+			// Verify nonce for CSRF protection
+			if ( ! isset( $_POST['beaconby_promote_nonce'] ) ||
+				 ! wp_verify_nonce( $_POST['beaconby_promote_nonce'], 'beaconby_promote_action' ) ) {
+				wp_die( 'Security check failed. Please try again.' );
+			}
+
 			$post = array();
 			foreach ( $_POST as $k => $v ) {
 				$k = esc_html( $k );
 				$v = esc_html( $v );
-				$post[$k] = $v; 
+				$post[$k] = $v;
 			}
 
 			$serialized = serialize( $post) ;
@@ -510,7 +522,7 @@ class Beacon_plugin {
 				);
 			}
 		}
-		
+
 		return $self->get_view( 'promote', 'Promote an eBook', $data );
 	}
 
@@ -523,8 +535,8 @@ class Beacon_plugin {
 		if ($_SERVER["SERVER_PORT"] != "80")
 		{
 			$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-		} 
-		else 
+		}
+		else
 		{
 			$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 		}
@@ -540,7 +552,7 @@ class Beacon_plugin {
 	 * @param mixed
 	 * @return int in bytes
 	 */
-	private function getMemoryUsage($var) 
+	private function getMemoryUsage($var)
 	{
 		$mem = memory_get_usage();
 		$tmp = unserialize(serialize($var));
@@ -589,23 +601,23 @@ class Beacon_plugin {
 
 
 		if ($mem <= 50) {
-			$post_limit = 100; 
+			$post_limit = 100;
 			$low_mem_mode = true;
 		} else if ($mem <= 64) {
-			$post_limit = 200; 
+			$post_limit = 200;
 			$low_mem_mode = true;
 		} else if ($mem <= 128) {
-			$post_limit = 650; 
+			$post_limit = 650;
 			$low_mem_mode = false;
 		} else if ($mem <= 256) {
-			$post_limit = 900; 
+			$post_limit = 900;
 			$low_mem_mode = false;
 		} else if ($mem > 256) {
-			$post_limit = 2000; 
+			$post_limit = 2000;
 			$low_mem_mode = false;
 		}
 
-		if ($total > 1000) 
+		if ($total > 1000)
 		{
 			$low_mem_mode = false;
 		}

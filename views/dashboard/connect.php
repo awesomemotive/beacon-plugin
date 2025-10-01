@@ -31,6 +31,7 @@
 	</p>
 
 	<form action="?page=beaconby-connect" method="post">
+		<?php wp_nonce_field( 'beaconby_disconnect_action', 'beaconby_disconnect_nonce' ); ?>
 		<input type="hidden" name="disconnect" value="disconnect"/>
 		<button type="submit" class="text-button">Disconnect</button>
 	</form>
@@ -72,7 +73,7 @@
 	<p class="large flush">
 	<a href="?page=beaconby-help">Check our help section on connecting manually</a>
 	</p>
-	
+
 
 </div>
 

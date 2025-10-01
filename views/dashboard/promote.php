@@ -41,7 +41,7 @@
 <div class="step step2">
 	<h1>2. Customize</h1>
 	<form method="post" id="beacon-promote">
-
+	<?php wp_nonce_field( 'beaconby_promote_action', 'beaconby_promote_nonce' ); ?>
 	<input type="hidden" name="url" value="<?php echo esc_url( $data['url'] ); ?>" />
 
 	<div class="form-row">
@@ -63,7 +63,7 @@
 </div>
 
 
-<div class="step step3">    
+<div class="step step3">
 	<h1>3. Preview</h1>
 
 	<?php
