@@ -3,7 +3,7 @@
 
 
 <p class="large">
-Please check out help center to get answers to frequently asked questions: 
+Please check out help center to get answers to frequently asked questions:
 <a href="https://help.beacon.by" target="_blank">Help Center</a>
 </p>
 
@@ -16,7 +16,7 @@ Please check out help center to get answers to frequently asked questions:
 </p>
 
 <p class="large">
-<b>1. </b> First, we're going to need your unique Beacon name. 
+<b>1. </b> First, we're going to need your unique Beacon name.
 <a href="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/dashboard/publication-name' ); ?>" target="_blank">
 Click this link to get it
 </a>
@@ -27,6 +27,7 @@ Click this link to get it
 <b>2. </b> Now we need to save it. Paste the name into the text field below:
 
 <form method="post" action="?page=beaconby-help">
+<?php wp_nonce_field( 'beaconby_manual_connect_action', 'beaconby_manual_connect_nonce' ); ?>
 <input type="text" name="beacon" />
 <button type="submit" class="text-button">Complete Manual Connection &raquo;</button>
 </form>
