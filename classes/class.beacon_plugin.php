@@ -52,7 +52,7 @@ class Beacon_plugin {
 	 */
 	public static function init() {
 		if (isset($_REQUEST['page'])
-			&& strstr(esc_html($_REQUEST['page']), 'beaconby') !== -1 )
+			&& strstr(sanitize_key( $_REQUEST['page'] ), 'beaconby') !== -1 )
 		{
 
 			wp_enqueue_style( 'beaconby_admin',
@@ -146,7 +146,7 @@ class Beacon_plugin {
 		{
 			if (BEACONBY_INCLUDE_TITLES)
 			{
-				$post->post_content = '<h1>'.$post->post_title.'</h1>'
+				$post->post_content = '<h1>' . esc_html( $post->post_title ) . '</h1>'
 					. $post->post_content;
 			}
 
@@ -229,7 +229,7 @@ class Beacon_plugin {
 	public static function router() {
 
 		$current_page = isset($_REQUEST['page'])
-			? esc_html($_REQUEST['page'])
+			? sanitize_key( $_REQUEST['page'] )
 			: 'beaconby';
 
 		wp_enqueue_style( 'beaconby_admin',
@@ -250,7 +250,7 @@ class Beacon_plugin {
 		);
 
 		$beacon = isset($_REQUEST['beacon'])
-			? esc_html($_REQUEST['beacon'])
+			? sanitize_text_field( $_REQUEST['beacon'] )
 			: false;
 
 		if (!$self->data['has_connected'] && $beacon)
@@ -317,8 +317,8 @@ class Beacon_plugin {
 
 		$data = array();
 
-		$data['connected'] = array_key_exists ( 'beacon', $_GET )
-			? esc_html( $_GET['beacon'] ) : false;
+		$data['connected'] = array_key_exists( 'beacon', $_GET )
+			? sanitize_text_field( $_GET['beacon'] ) : false;
 
 		if ( $self->data['has_connected']  ) {
 			return $self->get_view( 'main', 'Welcome', $data );
@@ -345,10 +345,8 @@ class Beacon_plugin {
 
 		$debug = array_key_exists('debug', $_REQUEST);
 		$exit = array_key_exists('exit', $_REQUEST);
-		$order = array_key_exists('order', $_REQUEST)
-					? $_REQUEST['order'] : 'DESC';
 		$show = array_key_exists('show', $_REQUEST)
-					? $_REQUEST['show'] : false;
+					? sanitize_text_field( $_REQUEST['show'] ) : false;
 
 		$mem = $this->increaseMemoryLimit();
 		list($post_limit, $low_mem_mode) = $this->getPostLimit($mem, $total);
@@ -362,6 +360,12 @@ class Beacon_plugin {
 		}
 
 
+		// $posts = get_posts( array(
+		//  'numberposts' => $num_posts,
+		//  'order_by' => 'date',
+		//  'order' => $order,
+		//  'fields' => array('post_title', 'comment_status'),
+		//  'post_type' => array('page', 'post')) );
 		$posts = array();
 
 
