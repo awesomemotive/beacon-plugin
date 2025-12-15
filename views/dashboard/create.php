@@ -88,7 +88,7 @@ Please select at least one post
 
 	<input type="hidden" name="url" value="<?php echo esc_url( get_site_url() ); ?>" />
 	<input type="hidden" name="title" value="<?php echo esc_attr( get_bloginfo('name') ); ?>" />
-	<input type="hidden" name="decription" value="<?php echo esc_attr( get_bloginfo('description') ); ?>" />
+	<input type="hidden" name="description" value="<?php echo esc_attr( get_bloginfo('description') ); ?>" />
 
 
 
