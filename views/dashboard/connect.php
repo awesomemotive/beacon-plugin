@@ -46,8 +46,8 @@
 	<p> Connect WordPress to your Beacon account so you can convert blog posts into lead magnets.  </p>
 
 	<form action="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/auth/wordpress' ); ?>" method="post">
-		<input type="hidden" name="blog" value="<?php echo esc_attr( $_SERVER['HTTP_HOST'] ); ?>" />
-		<input type="hidden" name="ref" value="<?php echo esc_url( Beacon_plugin::getPageURL() ); ?>" />
+		<input type="hidden" name="blog" value="<?php echo esc_attr( wp_parse_url( get_site_url(), PHP_URL_HOST ) ); ?>" />
+		<input type="hidden" name="ref" value="<?php echo esc_attr( admin_url( 'admin.php?page=beaconby-connect' ) ); ?>" />
 		<button class="button large">Connect</button>
 	</form>
 
@@ -56,8 +56,8 @@
 	<p class="large flush">I don't have a Beacon account </p>
 
 	<form action="<?php echo esc_url( BEACONBY_CREATE_TARGET . '/auth/register-wordpress' ); ?>" method="post">
-		<input type="hidden" name="page" value="<?php echo esc_attr( $_SERVER['HTTP_HOST'] ); ?>"/>
-		<input type="hidden" name="domain" value="<?php echo esc_url( $_SERVER['PHP_SELF'] ); ?>"/>
+		<input type="hidden" name="blog" value="<?php echo esc_attr( wp_parse_url( get_site_url(), PHP_URL_HOST ) ); ?>" />
+		<input type="hidden" name="ref" value="<?php echo esc_attr( admin_url( 'admin.php?page=beaconby-connect' ) ); ?>" />
 		<button type="submit" class="text-button">Create a free account &gt;</button>
 	</form>
 	<br />
@@ -71,7 +71,7 @@
 	<br />
 	<h1>Having Trouble?</h1>
 	<p class="large flush">
-	<a href="?page=beaconby-help">Check our help section on connecting manually</a>
+	<a href="<?php echo esc_url( admin_url( 'admin.php?page=beaconby-help' ) ); ?>">Check our help section on connecting manually</a>
 	</p>
 
 
