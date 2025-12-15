@@ -17,20 +17,20 @@ class Beacon_widget extends WP_Widget {
 	function __construct() {
 
 		parent::__construct(
-			 
+
 			'beacon_widget',
-			__('Beacon Widget', 'beacon' ),
+			__('Beacon Widget', 'beacon-by' ),
 			array (
-				'description' => __( 'Data capture form for your Beacon issues', 'beacon' )
+				'description' => __( 'Data capture form for your Beacon issues', 'beacon-by' )
 			) );
 
 	}
 
 
 	function form( $instance ) {
-	 
-		$default = array( 
-			'widget_code' =>  ''); 
+
+		$default = array(
+			'widget_code' =>  '');
 
 		$code = get_option('beacon_promote_options');
 
@@ -43,7 +43,6 @@ class Beacon_widget extends WP_Widget {
 		$output = $this->get_view('admin', $data);
 
 		echo $output;
-
 	}
 
 
@@ -52,10 +51,10 @@ class Beacon_widget extends WP_Widget {
 
 		$css_src = BEACONBY_PLUGIN_URL . 'css/beacon-widget.css';
 
-		wp_enqueue_style( 'beaconby-widget', $css_src); 
+		wp_enqueue_style( 'beaconby-widget', $css_src);
 
 		$data = $args;
-		$data['host'] = (isset($_SERVER) 
+		$data['host'] = (isset($_SERVER)
 						&& array_key_exists('HTTP_HOST', $_SERVER))
 			? esc_html($_SERVER['HTTP_HOST'])
 			: '';
@@ -86,7 +85,7 @@ class Beacon_widget extends WP_Widget {
 		$data = ($data) ? $data : array();
 		// extract($data);
 		ob_start();
-		require($view);         
+		require($view);
 		$view = ob_get_contents();
 		ob_end_clean();
 
