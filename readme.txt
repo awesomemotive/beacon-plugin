@@ -114,7 +114,7 @@ https://help.beacon.by/
 
 = 1.4.6 =
 * Updated explanatory text
-* Small PHP7.2 compatibility fix 
+* Small PHP7.2 compatibility fix
 
 = 1.4.5 =
 * Includes post title with post_content by default
@@ -170,7 +170,7 @@ https://help.beacon.by/
 
 = 1.3.3 =
 * Embed iframe clears surrounding content to prevent possible overlaps
-* Updates embed to allow for scrolling within iframe 
+* Updates embed to allow for scrolling within iframe
 * Fixes conflict with some php installations when SELF is used rather than self
 
 = 1.1 =

@@ -22,7 +22,7 @@ Choose which blog posts you want to include in your lead magnet.
 		</button>
 		</form>
 	</div>
-	
+
 
 <div class="err error-no-posts">
 Please select at least one post
@@ -37,26 +37,26 @@ Please select at least one post
 	<div class="info">
 		<h2>Debug Info</h2>
 
-		<dl>          
+		<dl>
 			<dt>Available RAM </dt>
 			<dd><?php echo esc_html( $data['mem'] ); ?>mb</dd>
-					
+
 			<dt>Low memory mode</dt>
 			<dd><?php echo esc_html( $data['low_mem_mode_display'] ); ?></dd>
 
 			<dt>Posts shown</dt>
 			<dd><?php echo esc_html( count($posts) ); ?></dd>
-						
+
 			<dt>Total posts</dt>
 			<dd><?php echo esc_html( $data['total'] ); ?></dd>
-						
+
 			<dt>Max posts</dt>
 			<dd><?php echo esc_html( $data['post_limit'] ); ?></dd>
 		</dl>
 	</div>
 <?php endif; ?>
 
-<?php 
+<?php
 	if ($data['exit'])
 	{
 		die('Exiting');
@@ -94,7 +94,7 @@ Please select at least one post
 
 
 
-	<?php 
+	<?php
 	if ( $posts ) :
 		foreach ( $posts as $post ) :
 			// if (!$data['low_mem_mode'])
@@ -132,15 +132,15 @@ Please select at least one post
 	?>
 
 	<div class="form-row type-<?php echo esc_attr( $post->post_type ); ?>">
-		<input type="checkbox" 
-				class="post_toggle" 
+		<input type="checkbox"
+				class="post_toggle"
 				id="beacon_export_<?php echo esc_attr( $post->ID ); ?>" />
-		<input type="hidden" 
-				class="post_data" 
-				data-cats="<?php echo esc_attr( $post->cats ); ?>" 
-				data-tags="<?php echo esc_attr( $post->tags ); ?>" 
+		<input type="hidden"
+				class="post_data"
+				data-cats="<?php echo esc_attr( $post->cats ); ?>"
+				data-tags="<?php echo esc_attr( $post->tags ); ?>"
 				data-title="<?php echo esc_attr( $post->post_title ); ?>"
-				name="posts[<?php echo esc_attr( $post->id ); ?>]" 
+				name="posts[<?php echo esc_attr( $post->id ); ?>]"
 				value="<?php echo esc_attr( $encoded ); ?>" />
 
 		<label for="beacon_export_<?php echo esc_attr( $post->ID ); ?>">
@@ -162,7 +162,7 @@ Please select at least one post
 
 	<h3>Showing Post type</h3>
 	<span class="checkbox">
-		<input type="checkbox" id="toggle-post" name="show-post" checked /> 
+		<input type="checkbox" id="toggle-post" name="show-post" checked />
 		<label for="togglePost">Post</label>
 	</span>
 	<span class="checkbox">
@@ -177,8 +177,8 @@ Please select at least one post
 
 	<span class="all-cat">Show All</span>
 	<br>
-	<?php 
-	$categories = get_categories(); 
+	<?php
+	$categories = get_categories();
 	foreach ( $categories as $cat ):
 	?>
 	<span class="toggle-cat"><?php echo esc_html( $cat->name ); ?></span>
@@ -192,8 +192,8 @@ Please select at least one post
 	</p>
 	<span class="all-tag">Show All</span>
 	<br>
-	<?php 
-	$tags = get_tags(); 
+	<?php
+	$tags = get_tags();
 	foreach ( $tags as $tag ):
 	?>
 	<span class="toggle-tag"><?php echo esc_html( $tag->name ); ?></span>
@@ -226,15 +226,15 @@ Please select at least one post
 
 <script type="text/template" id="formRow">
 	<div class="form-row type-{post_type}">
-		<input type="checkbox" 
-				class="post_toggle" 
+		<input type="checkbox"
+				class="post_toggle"
 				id="beacon_export_{ID}" />
-		<input type="hidden" 
-				class="post_data" 
-				data-cats="{cats}" 
-				data-tags="{tags}" 
+		<input type="hidden"
+				class="post_data"
+				data-cats="{cats}"
+				data-tags="{tags}"
 				data-title="{post_title}"
-				name="posts[{ID}]" 
+				name="posts[{ID}]"
 				value="{encoded}" />
 
 		<label for="beacon_export_{ID}">

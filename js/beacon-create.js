@@ -121,7 +121,7 @@ jQuery(document).ready(function() {
 
       var cats = $(this).data('cats').split(','),
           title = $(this).data('title') || 'blank',
-          found = false, 
+          found = false,
           i = cats.length,
           parent = $(this).parent('div').addClass('hide');
 
@@ -136,7 +136,7 @@ jQuery(document).ready(function() {
 
       if (found) {
         $(this).parent('div').removeClass('hide');
-      } 
+      }
 
     });
   };
@@ -155,14 +155,14 @@ jQuery(document).ready(function() {
     });
 
     $('.post_data').each(function() {
-      
+
       console.log(
         $(this).data('cats')
       );
       var postCats = $(this).data('cats').split(','),
           postTags = $(this).data('tags').split(','),
           title = $(this).data('title') || 'blank',
-          found = false, 
+          found = false,
           i = postCats.length,
           parent = $(this).parent('div').addClass('hide');
 
@@ -183,7 +183,7 @@ jQuery(document).ready(function() {
 
         if (found) {
           $(this).parent('div').removeClass('hide');
-        } 
+        }
 
     });
 
@@ -212,7 +212,7 @@ jQuery(document).ready(function() {
     }
 
     $('.post_data').each(function() {
-      
+
         $(this).parent('div').removeClass('hide');
 
     });
@@ -224,7 +224,7 @@ jQuery(document).ready(function() {
 
   var searchFilter = function(terms) {
 
-    var title, 
+    var title,
         label,
         highlight = new RegExp(terms, 'gi'),
         str;
@@ -261,8 +261,8 @@ jQuery(document).ready(function() {
   filter.keyup(function() {
     // searchFilter($(this).val());
   });
-  
-  
+
+
   runSearch.submit(function(e) {
     e.preventDefault();
     var terms = filter.val();
@@ -271,7 +271,7 @@ jQuery(document).ready(function() {
   });
 
   toggleVisible.change(function() {
-  }); 
+  });
 
 
 
@@ -319,7 +319,7 @@ jQuery(document).ready(function() {
     e.preventDefault();
     showAll('cat');
   });
-  
+
   showAllTag.click(function(e) {
     e.preventDefault();
     showAll('tag');
@@ -335,9 +335,9 @@ jQuery(document).ready(function() {
     var checked = $(this).is(':checked') ? true : false;
 
     if (checked) {
-      $('.form-row.type-post').show(); 
+      $('.form-row.type-post').show();
     } else {
-      $('.form-row.type-post').hide(); 
+      $('.form-row.type-post').hide();
     }
   });
 
@@ -346,9 +346,9 @@ jQuery(document).ready(function() {
     var checked = $(this).is(':checked') ? true : false;
 
     if (checked) {
-      $('.form-row.type-page').show(); 
+      $('.form-row.type-page').show();
     } else {
-      $('.form-row.type-page').hide(); 
+      $('.form-row.type-page').hide();
     }
   });
 

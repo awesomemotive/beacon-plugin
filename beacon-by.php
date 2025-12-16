@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
 Plugin Name: Beacon Plugin
 Description: Create, Promote and Embed eBooks
@@ -32,7 +32,7 @@ function beacon_row_meta( $links, $file ) {
 		$new_links = array(
 					'<a href="' . esc_url( admin_url( 'admin.php?page=beaconby-help' ) ) . '">Help</a>',
 				);
-		
+
 		$links = array_merge( $links, $new_links );
 
 	}

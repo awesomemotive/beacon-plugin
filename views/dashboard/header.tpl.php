@@ -2,8 +2,8 @@
 
 	<h1 class="title">
 	Beacon Plugin
-		<?php 
-			if (isset($title)) 
+		<?php
+			if (isset($title))
 			{
 				echo esc_html( '&raquo; ' . $title );
 			}
@@ -25,6 +25,6 @@
 	</div>
 
 	<div class="requires-login">
-	
+
 
 
