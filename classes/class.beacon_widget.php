@@ -49,9 +49,7 @@ class Beacon_widget extends WP_Widget {
 
 	function widget ($args, $instance) {
 
-		$css_src = BEACONBY_PLUGIN_URL . 'css/beacon-widget.css';
-
-		wp_enqueue_style( 'beaconby-widget', $css_src);
+		wp_enqueue_style( 'beaconby-widget', BEACONBY_PLUGIN_URL . 'css/beacon-widget.css', array(), BEACONBY_VERSION );
 
 		$data = $args;
 		$data['host'] = (isset($_SERVER)
