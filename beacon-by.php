@@ -41,7 +41,6 @@ function beacon_row_meta( $links, $file ) {
 }
 
 
-// add_action( 'widgets_init', 'beacon_register_widget' );
 add_action( 'admin_init', array( 'Beacon_plugin', 'init' ) );
 add_action( 'admin_menu', array( 'Beacon_plugin', 'menu'));
 add_action( 'wp_ajax_BN_get_posts', array('Beacon_plugin', 'get_posts'));

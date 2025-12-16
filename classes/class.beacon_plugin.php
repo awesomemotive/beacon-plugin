@@ -53,7 +53,6 @@ class Beacon_plugin {
 	public static function init() {
 		if ( isset( $_REQUEST['page'] ) && strstr( sanitize_key( $_REQUEST['page'] ), 'beaconby') !== -1 ) {
 			wp_enqueue_style( 'beaconby_admin', BEACONBY_PLUGIN_URL . 'css/beacon.css', array(), BEACONBY_VERSION );
-			wp_enqueue_style( 'beaconby_widget', BEACONBY_PLUGIN_URL . 'css/beacon-widget.css', array(), BEACONBY_VERSION );
 			wp_enqueue_style( 'beaconby_fontawesome', BEACONBY_PLUGIN_URL .  'css/font-awesome.min.css', array(), BEACONBY_VERSION );
 
 			wp_enqueue_script( 'beaconby_admin', BEACONBY_PLUGIN_URL .  'js/beacon.js', array(), BEACONBY_VERSION, true );
@@ -103,10 +102,6 @@ class Beacon_plugin {
 		add_menu_page( 'Beacon eBook plugin', 'Beacon', $capability, 'beaconby', $action, BEACONBY_PLUGIN_URL . 'i/beacon.png' );
 
 		add_submenu_page( 'beaconby', 'Create', 'Create', $capability, 'beaconby-create', $action);
-
-		// add_submenu_page( 'beaconby', 'Promote', 'Promote', $capability, 'beaconby-promote', $action);
-
-		// add_submenu_page( 'beaconby', 'Embed', 'Embed', $capability, 'beaconby-embed', $action);
 
 		add_submenu_page( 'beaconby', 'Connect', 'Connect', $capability, 'beaconby-connect', $action);
 
@@ -223,7 +218,6 @@ class Beacon_plugin {
 			: 'beaconby';
 
 		wp_enqueue_style( 'beaconby_admin', BEACONBY_PLUGIN_URL . 'css/beacon.css', array(), BEACONBY_VERSION );
-		wp_enqueue_style( 'beaconby_widget', BEACONBY_PLUGIN_URL . 'css/beacon-widget.css', array(), BEACONBY_VERSION );
 		wp_enqueue_style( 'beaconby_fontawesome', BEACONBY_PLUGIN_URL .  'css/font-awesome.min.css', array(), BEACONBY_VERSION );
 
 		wp_enqueue_script( 'beaconby_admin', BEACONBY_PLUGIN_URL .  'js/beacon.js', array(), BEACONBY_VERSION, true );
@@ -262,16 +256,8 @@ class Beacon_plugin {
 				$output = $self->page_create();
 			break;
 
-			case 'beaconby-embed':
-				$output = $self->page_embed();
-			break;
-
 			case 'beaconby-help':
 				$output = $self->page_help();
-			break;
-
-			case 'beaconby-promote':
-				$output = $self->page_promote();
 			break;
 
 			case 'beaconby-connect':
@@ -369,21 +355,6 @@ class Beacon_plugin {
 		return $self->get_view('create', 'Create an eBook', $data);
 	}
 
-
-	/**
-	 * renders embed ebook page
-	 *
-	 * @access private
-	 * @return string
-	 */
-	private function page_embed() {
-
-		$self = self::get_instance();
-		wp_enqueue_script( 'beaconby_embed', BEACONBY_PLUGIN_URL . 'js/beacon-embed.js', array(), BEACONBY_VERSION, true );
-		return $self->get_view( 'embed', 'Embed an eBook' );
-	}
-
-
 	/**
 	 * renders help page
 	 *
@@ -432,61 +403,6 @@ class Beacon_plugin {
 		return $self->get_view( 'connect', 'Connect' );
 	}
 
-
-	/**
-	 * renders promote ebook page and saves
-	 * text fields for widget
-	 *
-	 * @access private
-	 * @return string
-	 */
-	private function page_promote() {
-
-		$self = self::get_instance();
-
-		wp_enqueue_script( 'beaconby_promote', BEACONBY_PLUGIN_URL .  'js/beacon-promote.js', array(), BEACONBY_VERSION, true );
-
-		$data = array();
-		if ( ! empty( $_POST ) && current_user_can( 'manage_options' ) ) {
-
-			// Verify nonce for CSRF protection
-			check_admin_referer( 'beaconby_promote_action', 'beaconby_promote_nonce' );
-
-			$post = array();
-			foreach ( $_POST as $k => $v ) {
-				$k = esc_html( $k );
-				$v = esc_html( $v );
-				$post[$k] = $v;
-			}
-
-			$serialized = serialize( $post) ;
-
-			try {
-				update_option( 'beacon_promote_options', $serialized );
-			} catch ( Exception $e ) {
-
-			}
-			$data = get_option( 'beacon_promote_options' );
-			$data = unserialize($data);
-			$data['saved'] = true;
-
-		}
-		else {
-
-			$data = get_option( 'beacon_promote_options' );
-			$data = unserialize($data);
-			if ( !$data ) {
-				$data = array(
-					'url' => '',
-					'headline' => 'Headline',
-					'title' => 'Short blurb goes here',
-					'button' => 'Access eBook Now!',
-				);
-			}
-		}
-
-		return $self->get_view( 'promote', 'Promote an eBook', $data );
-	}
 
 	/**
 	 * returns memory used by variable
