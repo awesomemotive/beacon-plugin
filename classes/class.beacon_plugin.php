@@ -394,25 +394,17 @@ class Beacon_plugin {
 
 		$self = self::get_instance();
 
-		if (array_key_exists('beacon', $_POST))
-		{
-			// Verify nonce for CSRF protection
-			if ( ! isset( $_POST['beaconby_manual_connect_nonce'] ) ||
-				 ! wp_verify_nonce( $_POST['beaconby_manual_connect_nonce'], 'beaconby_manual_connect_action' ) ) {
-				wp_die( 'Security check failed. Please try again.' );
-			}
-
-			$beacon = trim($_POST['beacon']);
-			add_option( 'beacon_connected', $beacon );
-			update_option( 'beacon_connected', $beacon );
-			$self->data['has_connected'] = self::has_connected();
-			return $self->get_view( 'connect', 'Connect' );
-		}
-		else
-		{
+		if ( ! isset( $_POST['beacon'] ) ) {
 			return $self->get_view( 'help', 'Help' );
 		}
 
+		// Verify nonce for CSRF protection
+		check_admin_referer( 'beaconby_manual_connect_action', 'beaconby_manual_connect_nonce' );
+
+		$beacon = sanitize_text_field( wp_unslash( $_POST['beacon'] ) );
+		update_option( 'beacon_connected', $beacon );
+		$self->data['has_connected'] = self::has_connected();
+		return $self->get_view( 'connect', 'Connect' );
 	}
 
 
@@ -427,29 +419,17 @@ class Beacon_plugin {
 
 		$self = self::get_instance();
 
-		if (array_key_exists('disconnect', $_POST))
-		{
+		if ( isset( $_POST['disconnect'] ) && current_user_can( 'manage_options' ) ) {
 			// Verify nonce for CSRF protection
-			if ( ! isset( $_POST['beaconby_disconnect_nonce'] ) ||
-				 ! wp_verify_nonce( $_POST['beaconby_disconnect_nonce'], 'beaconby_disconnect_action' ) ) {
-				wp_die( 'Security check failed. Please try again.' );
-			}
+			check_admin_referer( 'beaconby_disconnect_action', 'beaconby_disconnect_nonce' );
 
 			delete_option('beacon_authorized');
 			delete_option('widget_beacon_widget');
 			delete_option('beacon_promote_options');
 			delete_option('beacon_connected');
-			return $self->get_view( 'connect', 'Connect' );
 		}
 
-		if( get_option('beacon_connected'))
-		{
-			return $self->get_view( 'connect', 'Connect' );
-		}
-		else
-		{
-			return $self->get_view( 'connect', 'Connect' );
-		}
+		return $self->get_view( 'connect', 'Connect' );
 	}
 
 
@@ -467,13 +447,10 @@ class Beacon_plugin {
 		wp_enqueue_script( 'beaconby_promote', BEACONBY_PLUGIN_URL .  'js/beacon-promote.js', array(), BEACONBY_VERSION, true );
 
 		$data = array();
-		if ( !empty($_POST) ) {
+		if ( ! empty( $_POST ) && current_user_can( 'manage_options' ) ) {
 
 			// Verify nonce for CSRF protection
-			if ( ! isset( $_POST['beaconby_promote_nonce'] ) ||
-				 ! wp_verify_nonce( $_POST['beaconby_promote_nonce'], 'beaconby_promote_action' ) ) {
-				wp_die( 'Security check failed. Please try again.' );
-			}
+			check_admin_referer( 'beaconby_promote_action', 'beaconby_promote_nonce' );
 
 			$post = array();
 			foreach ( $_POST as $k => $v ) {
