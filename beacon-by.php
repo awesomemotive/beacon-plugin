@@ -1,15 +1,16 @@
 <?php
 /*
-Plugin Name: Beacon Plugin
+Plugin Name: Beacon Lead Magnets and Lead Capture
 Description: Create, Promote and Embed eBooks
-Version: 1.5.8
+Version: 1.5.9
 Author: Beacon
 Author URI: https://beacon.by
 Plugin URI: https://beacon.by/wordpress/
-License: GPL v2 (or later)
-Requires PHP: 5.3
+License: GPLv2 or later
+Requires PHP: 7.4
+Requires at least: 5.3
 
-copyright 2016 beacon.by
+copyright 2016-2025 beacon.by
 */
 
 // Exit if accessed directly.
