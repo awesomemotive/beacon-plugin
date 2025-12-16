@@ -160,23 +160,6 @@ class Beacon_plugin {
 		wp_die();
 	}
 
-
-	public static function plugin_activation() {
-
-	}
-
-
-	/**
-	 * removes all traces of plugin
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public static function plugin_deactivation() {
-
-	}
-
-
 	/**
 	 * checks whether there is positive entry in wp_options
 	 * for authorization
@@ -321,21 +304,6 @@ class Beacon_plugin {
 		$mem = $this->increaseMemoryLimit();
 		list($post_limit, $low_mem_mode) = $this->getPostLimit($mem, $total);
 
-		$num_posts = ( $total < $post_limit && $low_mem_mode )
-			? -1 : $post_limit;
-
-		if ($show)
-		{
-			$num_posts = $show;
-		}
-
-
-		// $posts = get_posts( array(
-		//  'numberposts' => $num_posts,
-		//  'order_by' => 'date',
-		//  'order' => $order,
-		//  'fields' => array('post_title', 'comment_status'),
-		//  'post_type' => array('page', 'post')) );
 		$posts = array();
 
 
@@ -401,21 +369,6 @@ class Beacon_plugin {
 		}
 
 		return $self->get_view( 'connect', 'Connect' );
-	}
-
-
-	/**
-	 * returns memory used by variable
-	 *
-	 * @access private
-	 * @param mixed
-	 * @return int in bytes
-	 */
-	private function getMemoryUsage($var)
-	{
-		$mem = memory_get_usage();
-		$tmp = unserialize(serialize($var));
-		return memory_get_usage() - $mem;
 	}
 
 
