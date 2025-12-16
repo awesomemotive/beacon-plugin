@@ -110,11 +110,9 @@ class Beacon_plugin {
 	}
 
 
-	public static function get_posts()
-	{
-		global $wpdb;
+	public static function get_posts() {
 
-		$from = intval( $_POST['from'] );
+		$from = isset( $_POST['from'] ) ? absint( wp_unslash( $_POST['from'] ) ) : 0;
 		$per_page = BEACONBY_PER_PAGE;
 		$next = $from + $per_page;
 		$data = array();
@@ -228,7 +226,7 @@ class Beacon_plugin {
 		);
 
 		$beacon = isset($_REQUEST['beacon'])
-			? sanitize_text_field( $_REQUEST['beacon'] )
+			? sanitize_text_field( wp_unslash( $_REQUEST['beacon'] ) )
 			: false;
 
 		if (!$self->data['has_connected'] && $beacon)
@@ -288,7 +286,7 @@ class Beacon_plugin {
 		$data = array();
 
 		$data['connected'] = array_key_exists( 'beacon', $_GET )
-			? sanitize_text_field( $_GET['beacon'] ) : false;
+			? sanitize_text_field( wp_unslash( $_GET['beacon'] ) ) : false;
 
 		if ( $self->data['has_connected']  ) {
 			return $self->get_view( 'main', 'Welcome', $data );
@@ -313,10 +311,11 @@ class Beacon_plugin {
 		$only_pages = wp_count_posts('page');
 		$total = $only_pages->publish + $only_posts->publish;
 
-		$debug = array_key_exists('debug', $_REQUEST);
-		$exit = array_key_exists('exit', $_REQUEST);
-		$show = array_key_exists('show', $_REQUEST)
-					? sanitize_text_field( $_REQUEST['show'] ) : false;
+		$debug = array_key_exists( 'debug', $_REQUEST );
+		$exit = array_key_exists( 'exit', $_REQUEST );
+		$show = array_key_exists( 'show', $_REQUEST )
+			? sanitize_text_field( wp_unslash( $_REQUEST['show'] ) )
+			: false;
 
 		$mem = $this->increaseMemoryLimit();
 		list($post_limit, $low_mem_mode) = $this->getPostLimit($mem, $total);
