@@ -30,7 +30,7 @@ function beacon_row_meta( $links, $file ) {
 	if ( $file == $plugin ) {
 
 		$new_links = array(
-					'<a href="admin.php?page=beaconby-help">Help</a>',
+					'<a href="' . esc_url( admin_url( 'admin.php?page=beaconby-help' ) ) . '">Help</a>',
 				);
 		
 		$links = array_merge( $links, $new_links );
