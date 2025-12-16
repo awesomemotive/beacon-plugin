@@ -81,6 +81,7 @@ Please select at least one post
 
 	<script>
 	var BeaconByPosts = <?php echo json_encode( $posts ); ?>;
+	window.BN = window.BN || {};
 	BN.totalPosts = <?php echo esc_attr( (int) $data['total'] ); ?>;
 	BN.perPage = <?php echo esc_attr( (int) $data['per_page'] ); ?>;
 	</script>
