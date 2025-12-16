@@ -285,8 +285,9 @@ class Beacon_plugin {
 
 		$data = array();
 
-		$data['connected'] = array_key_exists( 'beacon', $_GET )
-			? sanitize_text_field( wp_unslash( $_GET['beacon'] ) ) : false;
+		$data['connected'] = isset( $_GET['beacon'] )
+			? sanitize_text_field( wp_unslash( $_GET['beacon'] ) )
+			: false;
 
 		if ( $self->data['has_connected']  ) {
 			return $self->get_view( 'main', 'Welcome', $data );
@@ -311,9 +312,9 @@ class Beacon_plugin {
 		$only_pages = wp_count_posts('page');
 		$total = $only_pages->publish + $only_posts->publish;
 
-		$debug = array_key_exists( 'debug', $_REQUEST );
-		$exit = array_key_exists( 'exit', $_REQUEST );
-		$show = array_key_exists( 'show', $_REQUEST )
+		$debug = isset( $_REQUEST['debug'] );
+		$exit = isset( $_REQUEST['exit'] );
+		$show = isset( $_REQUEST['show'] )
 			? sanitize_text_field( wp_unslash( $_REQUEST['show'] ) )
 			: false;
 
