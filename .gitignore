@@ -1,2 +1,4 @@
 # Ignore SpecStory directory
 .specstory
+
+.DS_Store
